@@ -1255,3 +1255,40 @@ body {
     padding: 1rem;
   }
 }
+
+/*CSS para que boostrap no se vea feo */
+
+
+
+/* HEROOOOOO */
+.border-dashed {
+  border-style: dashed !important;
+}
+
+
+.logo-lehli {
+  max-width: 200px;
+}
+
+
+.btn-conoce-img {
+  max-width: 160px;
+  transition: transform 0.3s ease;
+}
+
+
+.btn-conoce-img:hover {
+  transform: scale(1.5);
+}
+
+
+/* CAJAS CON TEXTOOO */
+
+.valor-box {
+  background-color: #4a2b47;
+  color: #fff;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
