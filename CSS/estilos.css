@@ -1,0 +1,1257 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap');
+
+
+/* ========================== */
+/* ======= PÁGINA INICIO ==== */
+/* ========================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #dbd2db;
+  color: #222;
+}
+
+/* ========================== */
+/* ======= HEADER ==== */
+/* ========================== */
+header {
+  background-color: #101820;
+  color: #dbb4c8;
+  padding: 3rem 4rem;
+  display: flex;
+  justify-content: space-between; /*separa los tres bloques*/
+  align-items: center;
+  flex-wrap: wrap;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* IZQUIERDA: Logo + Texto */
+.logo-texto {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo-texto img {
+  height: 50px;
+}
+
+.titulo-sitio {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #dbb4c8;
+}
+
+
+
+/* CENTRO: Menú */
+.nav-centro {
+  flex: 1; /*Que se quede en el centro*/
+  text-align: center;
+}
+
+.menu-centro {
+  list-style: none;
+  display: inline-flex;
+  gap: 3rem;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-centro a {
+  color: #dbb4c8;
+  text-decoration: none;
+  font-weight: bold;
+
+}
+
+.menu-centro a:hover {
+  text-decoration: underline;
+}
+
+/* DERECHA: Contacto */
+.nav-derecha .contacto-link {
+  color: #dbb4c8;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+
+}
+
+.nav-derecha .contacto-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/* ========================== */
+/* ======= HERO ==== */
+/* ========================== */
+.hero {
+  background-color: #dbd2db;
+  padding: 2rem;
+}
+
+.hero-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 8px dashed black;
+  border-radius: 1rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-item {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-conoce img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-conoce img:hover {
+  transform: scale(1.05); /* efecto de zoom leve */
+}
+
+
+
+/* ===================================*/
+/* ======= Cuadros debajo de Hero ==== */
+/* =================================== */
+
+
+.intro-textos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7rem;
+  padding: 2rem;
+}
+
+.texto-bloque {
+  background-color: #50314c;
+  color: #f5d9eb;
+  border-radius: 10px;
+  padding: 5rem;
+  max-width: 700px;
+  flex: 1;
+  font-family: 'Audiowide', sans-serif;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .texto-bloque {
+    flex: 1 1 100%;
+    max-width: 90%;
+    font-size: 1rem; 
+  }
+}
+
+
+
+
+/* ===================================*/
+/* ======= LINEA DECORATIVA ==== */
+/* =================================== */
+
+.separador-img {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+   margin-top: 3rem;
+}
+
+.separador-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+/* ===================================*/
+/* ======= Productos Destacados  ==== */
+/* =================================== */
+.destacados {
+  background-color: #dbd2db;
+  padding: 2rem;
+   margin-top: 4rem;
+}
+
+.contenedor-productos {
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 2rem;
+  background-color: #dbd2db;
+  margin: 0 auto;
+}
+
+.titulo-seccion {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: #3b363c;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.producto-card {
+  background-color: #5a2e4c;
+  color: #f5d9eb;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.producto-card img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.producto-card h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.producto-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.producto-card button {
+   padding: 0.5rem 1rem;
+  border: none;
+  background-color: #dbd2db;
+  color: #3b363c;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.producto-card button:hover {
+ background-color: #ffffff;
+  color: #5a2e4c;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ===================================*/
+/* ======= VALORES =================== */
+/* =================================== */
+
+.valores-img {
+  margin-top: 2rem;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.valores-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ===== FOOTER ===== */
+.footer-lehli { 
+  background-color: #101820;
+  color: #dbb4c8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-item {
+  text-align: center;
+  margin: 0.5rem 1rem;
+}
+
+.footer-item p {
+  margin: 0;
+}
+
+.footer-item.redes {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-item.redes a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #dbb4c8;
+  gap: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-item.redes a:hover {
+  text-decoration: underline;
+}
+
+.icono-red {
+  width: 30px;
+  height: 30px;
+}
+
+/* Estilo para el correo */
+.correo-footer {
+  color: #dbb4c8;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.correo-footer:hover {
+  text-decoration: underline;
+}
+
+
+/* ==== MEDIA QUERIES PARA HEADER Y FOOTER ==== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    flex-wrap: wrap; /**/
+    padding: 1.5rem;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .logo-texto {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-centro {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .menu-centro {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .nav-derecha {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .nav-derecha .contacto-link {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-lehli {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-item.redes {
+    justify-content: center;
+  }
+}
+
+
+
+/* ============================ */
+/* ======= SOBRE LEHLI ======= */
+/* ============================ */
+
+.sobre-lehli {
+  background-color: #DBD2DB;
+  color: #3B363C;
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+}
+
+.intro-lehli {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.intro-lehli h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-lehli p {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+.intro-lehli img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+}
+
+
+/* === Historia === */
+.historia-lehli {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #DBD2DB;
+  padding: 3rem 1rem;
+}
+
+.historia-lehli .texto {
+  flex: 1 1 45%;
+}
+
+.historia-lehli .texto h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 3rem;
+  color: #50314C;
+  margin-bottom: 1rem;
+}
+
+.historia-lehli .texto p {
+  font-size: 1.4rem;
+  color: #3B363C;
+  line-height: 1.6;
+}
+
+.historia-lehli .imagen {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.historia-lehli .imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+}
+
+/* === Valores === */
+.valores-lehli {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.valores-lehli .tarjeta {
+  background-color: #50314C;
+  color: #f5d9eb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0,0,0,2);
+}
+
+/* === Galería === */
+.galeria-lehli {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.galeria-lehli h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.grid-galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* === Video LEHLI === */
+.video-lehli {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.video-lehli h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  color: #50314C;
+  margin-bottom: 2rem;
+}
+
+.contenedor-videos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.video-box {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.video-box video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+/* === CTA Final === */
+.cta-lehli {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.btn-lehli {
+  display: inline-block;
+  background-color: #3B363C;
+  color: #DBB4C8;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-lehli:hover {
+  background-color: #2a262b;
+}
+
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .historia-lehli {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .historia-lehli .texto,
+  .historia-lehli .imagen {
+    flex: 1 1 100%;
+  }
+
+  .valores-lehli {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .grid-galeria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-galeria {
+    grid-template-columns: 1fr;
+  }
+}
+/* =============================== */
+/* ===== PREGUNTAS FRECUENTES ==== */
+/* =============================== */
+
+.faq-lehli {
+  background-color: #dbd2db;
+  color: #3b363c;
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+}
+
+.intro-faq {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro-faq h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-faq p {
+  font-size: 1.2rem;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-contenido {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pregunta {
+  background-color: #50314c;
+  color: #f5d9eb;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.pregunta:hover {
+  transform: translateY(-20px);
+}
+
+.pregunta h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: #dbb4c8;
+}
+
+.pregunta p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .faq-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-faq h1 {
+    font-size: 2rem;
+  }
+}
+/* ============================ */
+/* ======= ACERCA DE CSS ===== */
+/* ============================ */
+
+.acerca-main {
+  background-color: #DBD2DB;
+  color: #3B363C;
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+}
+
+/* ==== Intro ==== */
+.acerca-intro {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.acerca-intro h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #50314C;
+}
+
+.acerca-intro p {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+/* ==== Datos del Autor ==== */
+.acerca-datos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  background-color: #f5d9eb;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.acerca-datos .foto img {
+  max-width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.acerca-datos .info {
+  flex: 1;
+}
+
+.acerca-datos .info h2 {
+  font-size: 2rem;
+  color: #50314C;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.acerca-datos .info ul {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.acerca-datos .info ul li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ==== CTA ==== */
+.acerca-cta {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.acerca-cta a {
+  display: inline-block;
+  background-color: #3B363C;
+  color: #DBB4C8;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .acerca-datos {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .acerca-datos .info ul {
+    padding-left: 0;
+  }
+}
+
+/* ============================ */
+/* ======== CONTACTO ========= */
+/* ============================ */
+
+.contacto-main {
+  background-color: #DBD2DB;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #3B363C;
+}
+
+/* ===== Info ===== */
+.contacto-info {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contacto-info h1 {
+  font-size: 2.5rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: #50314C;
+  margin-bottom: 0.5rem;
+}
+
+.contacto-info p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.contacto-datos p {
+  font-size: 1.1rem;
+  margin: 0.2rem 0;
+}
+
+/* ===== Formulario ===== */
+.contacto-formulario {
+  background-color: #f5d9eb;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contacto-formulario h2 {
+  font-size: 2rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contacto-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contacto-formulario input,
+.contacto-formulario select,
+.contacto-formulario textarea {
+  padding: 0.7rem;
+  border: 2px solid #3B363C;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contacto-formulario button {
+  background-color: #3B363C;
+  color: #DBB4C8;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 0.75rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contacto-formulario button:hover {
+  background-color: #2a262b;
+}
+
+/* ==== Retroalimentación ==== */
+.mensaje-envio {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .contacto-formulario {
+    padding: 1.5rem;
+  }
+}
+
+/* ========================== */
+/* ======== BLOG =========== */
+/* ========================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-padding-top: 140px; /* Asegura espacio al usar anclas */
+}
+
+.blog-lehli {
+  background-color: #DBD2DB;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #3B363C;
+}
+
+.blog-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.blog-intro img {
+   max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+}
+
+.blog-intro h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.5rem;
+  color: #50314C;
+  margin-bottom: 0.5rem;
+}
+
+.blog-intro p {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.barra-categorias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.barra-categorias a {
+  background-color: #50314C;
+  color: #F5D9EB;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.barra-categorias a:hover {
+  background-color: #3B363C;
+}
+
+.blog-categoria {
+  margin-top: 4rem;
+  padding-top: 60px; /* Espacio superior cuando se navega por ancla */
+  scroll-margin-top: 140px;
+}
+
+.blog-categoria h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  color: #50314C;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #dbb4c8;
+  padding-bottom: 0.5rem;
+}
+
+/* 🟣 Grid de blog en 2 columnas */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.articulo {
+   display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: #F5D9EB;
+  border-radius: 12px;
+  padding: 2rem;
+  align-items: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  transition: transform 0.2s ease;
+  flex-wrap: wrap;
+}
+
+.articulo:hover {
+  transform: translateY(-4px);
+}
+
+.articulo img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.articulo-contenido {
+ flex: 1 1 250px;
+}
+
+.articulo h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.8rem;
+  color: #101820;
+  margin-bottom: 0.7rem;
+}
+
+.articulo p {
+   font-size: 1.1rem;
+  color: #3B363C;
+  line-height: 1.6;
+}
+
+.btn-leer-mas {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #50314C;
+  color: #F5D9EB;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-leer-mas:hover {
+  background-color: #3B363C;
+}
+
+@media (max-width: 900px) {
+  .articulo {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .articulo img {
+    max-width: 100%;
+  }
+
+  .articulo-contenido h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .blog-intro h1 {
+    font-size: 2rem;
+  }
+
+  .articulo-contenido p {
+    font-size: 1rem;
+  }
+}
+
+/* ========================== */
+/* === BLOG INDIVIDUAL ===== */
+/* ========================== */
+
+.blog-detalle {
+  background-color: #DBD2DB;
+  color: #3B363C;
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+  line-height: 1.7;
+}
+
+/* Encabezado del blog */
+.blog-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.blog-header h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.5rem;
+  color: #50314C;
+  margin-bottom: 1rem;
+}
+
+.blog-header img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Contenido */
+.blog-contenido {
+  background-color: #F5D9EB;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.blog-contenido p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.blog-contenido .hashtags {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: #50314C;
+  font-size: 0.95rem;
+  background-color: #ebcce1;
+  padding: 0.6rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Comentarios */
+.comentarios {
+  margin-top: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comentarios h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  color: #50314C;
+  margin-bottom: 1rem;
+}
+
+.comentario {
+  background-color: #ffffff;
+  border-left: 4px solid #50314C;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-style: italic;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Formulario de comentarios */
+.formulario-comentario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fdf6fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.formulario-comentario h3 {
+  font-size: 1.3rem;
+  color: #50314C;
+  margin-bottom: 0.5rem;
+}
+
+.formulario-comentario input,
+.formulario-comentario textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.formulario-comentario textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario-comentario button {
+  background-color: #50314C;
+  color: #F5D9EB;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-comentario button:hover {
+  background-color: #3B363C;
+}
+
+.barra-blog {
+   background-color: #F5D9EB;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+  margin-top: 3rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.barra-blog h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: #50314C;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.barra-blog ul {
+  list-style: none;
+  padding: 0;
+}
+
+.barra-blog li {
+  margin-bottom: 0.8rem;
+}
+
+.barra-blog a {
+  text-decoration: none;
+  color: #3B363C;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.barra-blog a:hover {
+  color: #DBB4C8;
+}
+
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+
+  .blog-contenido {
+    padding: 1.5rem;
+  }
+
+  .comentarios h2 {
+    font-size: 1.5rem;
+  }
+
+  .formulario-comentario {
+    padding: 1rem;
+  }
+}
