@@ -1260,6 +1260,17 @@ body {
 
 /* HEADERRRR */
 
+.nav-link {
+  color: #dbb4c8 !important;
+   font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+
+
 /* Botón hamburguesa más visible */
 .navbar-toggler {
   border-color: #dbb4c8;
