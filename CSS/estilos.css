@@ -1327,8 +1327,7 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-
-/* ===== CARRUSEL GENERAL ===== */
+/* ===== ESTILO GENERAL DEL CARRUSEL ===== */
 
 .titulo-carrusel {
   color: #dbb4c8;
@@ -1365,7 +1364,7 @@ body {
   width: 100%;
   max-width: 250px;
   min-width: 200px;
-  height: 300px;
+  height: 260px; /* bajamos un poco */
   margin: 0 auto;
   overflow: hidden;
   background-color: #4a2b47;
@@ -1381,43 +1380,26 @@ body {
   object-fit: contain;
 }
 
-/* ===== DISEÑO EN CELULAR: mostrar 2 productos por slide y cortar el tercero ===== */
-
+/* ===== CELULAR: 3 productos uno debajo del otro, más compactos ===== */
 @media (max-width: 767.98px) {
-  .carousel-item .row {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow: hidden !important; /* Este es clave */
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .carousel-item .producto-carrusel {
-    flex: 0 0 48%;
-    max-width: 48%;
-  }
-
-  .contenedor-img-producto {
-    height: 200px;
-  }
-
   .producto-titulo {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .btn-ver-mas {
     font-size: 0.9rem;
     padding: 0.4rem 1rem;
-    width: 90%;
+    width: 50%;
     margin: 0 auto;
   }
-}
 
-/* ===== ESCRITORIO: 3 por slide ===== */
+  .contenedor-img-producto {
+    height: 180px;
+  }
 
-@media (min-width: 768px) {
   .carousel-item .producto-carrusel {
-    flex: 0 0 33.3333%;
-    max-width: 33.3333%;
+    margin-bottom: 1rem;
   }
 }
+
+
