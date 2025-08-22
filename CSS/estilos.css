@@ -1387,9 +1387,18 @@ body {
 /* MEDIAA QUERIES PARA QUE SE VEA HORIZONTAL */
 
 @media (max-width: 767.98px) {
-  .carousel-inner .row > div {
+  .carousel-item .row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+  }
+
+  .producto-carrusel {
     flex: 0 0 100%;
     max-width: 100%;
+    scroll-snap-align: center;
   }
 
   .carousel-inner {
@@ -1402,6 +1411,3 @@ body {
     margin: 0 auto;
   }
 }
-
-
-
