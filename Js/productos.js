@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(productos => {
       const contenedores = {
-        "COLECCION LEHLI": document.querySelectorAll(".bloque-coleccion.urban .producto-preview"),
-        "NEO FUTURE": document.querySelectorAll(".bloque-coleccion.natural .producto-preview"),
-        "BOXI DENIM": document.querySelectorAll(".bloque-coleccion.elegante .producto-preview"),
-        "Stylings by LEHLI": document.querySelectorAll(".bloque-coleccion.atrevida .producto-preview")
+        "COLECCION LEHLI": document.querySelectorAll(".bloque-coleccion.urban .productos-contenedor"),
+        "NEO FUTURE": document.querySelectorAll(".bloque-coleccion.natural .productos-contenedor"),
+        "BOXI DENIM": document.querySelectorAll(".bloque-coleccion.elegante .productos-contenedor"),
+        "Stylings by LEHLI": document.querySelectorAll(".bloque-coleccion.atrevida .productos-contenedor")
       };
 
       const conteo = {

@@ -1364,7 +1364,6 @@ body {
   display: block;
 }
 
-
 /* Bloque de colección */
 .bloque-coleccion {
   background-color: #101820;
@@ -1373,6 +1372,7 @@ body {
   border: 3px solid #dbb4c8;
   box-shadow: 0 0 15px rgba(219, 180, 200, 0.3);
   transition: transform 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .bloque-coleccion:hover {
@@ -1388,6 +1388,26 @@ body {
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+/* Contenedor flexible de productos */
+.productos-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Acomodo de tarjetas por columna */
+.productos-contenedor > .col-6 {
+  flex: 1 1 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+}
+
+@media (max-width: 768px) {
+  .productos-contenedor > .col-6 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 /* Producto vacío de momento */
@@ -1409,8 +1429,7 @@ body {
 .natural .titulo-coleccion { color: #dbb4c8; }
 .atrevida .titulo-coleccion { color: #dbb4c8; }
 
-
-/* PRODUCTOS  */
+/* PRODUCTOS */
 
 .producto {
   background-color: #1a1a1a;
@@ -1446,17 +1465,38 @@ body {
   width: 100%;
 }
 
+/* Tarjetas Bootstrap mejoradas */
 .card-img-top {
   height: 180px;
   object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
 .card {
   height: 100%;
+  border: none;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.95rem;
 }
