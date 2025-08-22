@@ -29,7 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
               </div>
             </div>
           `;
-          contenedores[categoria][conteo[categoria]].innerHTML = html;
+          const tarjeta = document.createElement("div");
+tarjeta.className = "col-6";
+tarjeta.innerHTML = html;
+contenedores[categoria][0].appendChild(tarjeta);
+
           conteo[categoria]++;
         }
       });
