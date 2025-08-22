@@ -1384,30 +1384,25 @@ body {
 }
 
 
-/* MEDIAA QUERIES PARA QUE SE VEA HORIZONTAL */
+/* MEDIAA QUERIES PARA QUE SE VEA BIEN */
 
 @media (max-width: 767.98px) {
-  .carousel-item .row {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1rem;
-  }
-
-  .producto-carrusel {
-    flex: 0 0 100%;
-    max-width: 100%;
-    scroll-snap-align: center;
-  }
-
-  .carousel-inner {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .carousel-item .producto-carrusel {
+    flex: 0 0 80%;
+    max-width: 80%;
+    margin: 0 auto;
   }
 
   .btn-ver-mas {
     width: 70%;
     margin: 0 auto;
+  }
+}
+
+/* Escritorio: 3 productos por slide */
+@media (min-width: 768px) {
+  .carousel-item .producto-carrusel {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
   }
 }
