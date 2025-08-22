@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Falda Retazos",
+    "precio": "₡20.000",
+    "imagen": "img/DiseñoFald.png",
+    "categoria": "COLECCION LEHLI"
+  },
+  {
+    "id": 2,
+    "nombre": "Corset Strapple",
+    "precio": "₡15.000",
+    "imagen": "img/FtCorsetFrente.png",
+    "categoria": "COLECCION LEHLI"
+  },
+  {
+    "id": 3,
+    "nombre": "Jort Camouflaged",
+    "precio": "₡15.000",
+    "imagen": "img/DiseñoJort1.png",
+    "categoria": "Boxi denim"
+  },
+  {
+    "id": 4,
+    "nombre": "Chaqueta Colección",
+    "precio": "₡20.000",
+    "imagen": "img/SueFront.png",
+    "categoria": "Boxi denim"
+  },
+  {
+    "id": 5,
+    "nombre": "Pantalón Colección",
+    "precio": "₡20.000",
+    "imagen": "img/PantFront.jpg",
+    "categoria": "NEO FUTURE"
+  },
+  {
+    "id": 6,
+    "nombre": "Styling 1",
+    "precio": "₡35.000",
+    "imagen": "img/Modelo1.jpg",
+    "categoria": "NEO FUTURE"
+  },
+  {
+    "id": 7,
+    "nombre": "Styling 2",
+    "precio": "₡35.000",
+    "imagen": "img/Modelo2.jpg",
+    "categoria": "Stylings by LEHLI"
+  },
+  {
+    "id": 8,
+    "nombre": "Styling 3",
+    "precio": "₡35.000",
+    "imagen": "img/Modelo3.jpg",
+    "categoria": "Stylings by LEHLI"
+  }
+]

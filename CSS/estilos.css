@@ -1346,3 +1346,65 @@ body {
 /* ACA TERMINA LO DEL CARRUSEL */
 
 
+/* ACA INICIA EL CSS PARA PRODUCTOS */
+
+/* Título general */
+.titulo-catalogo {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: #4a2b47;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.logo-lehli {
+  max-width: 400px; 
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+
+/* Bloque de colección */
+.bloque-coleccion {
+  background-color: #101820;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 3px solid #dbb4c8;
+  box-shadow: 0 0 15px rgba(219, 180, 200, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.bloque-coleccion:hover {
+  transform: scale(1.01);
+}
+
+/* Título de cada colección */
+.titulo-coleccion {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+  border-bottom: 2px solid #dbb4c8;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Producto vacío de momento */
+.producto-preview {
+  background-color: #4a2b47;
+  border-radius: 15px;
+  height: 200px;
+  box-shadow: inset 0 0 5px #00000066;
+}
+
+/* Colores por colección */
+.urban { border-color: #dbb4c8; }
+.elegante { border-color: #dbb4c8; }
+.natural { border-color: #dbb4c8; }
+.atrevida { border-color: #dbb4c8; }
+
+.urban .titulo-coleccion { color: #dbb4c8; }
+.elegante .titulo-coleccion { color: #dbb4c8; }
+.natural .titulo-coleccion { color: #dbb4c8; }
+.atrevida .titulo-coleccion { color: #dbb4c8; }
