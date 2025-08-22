@@ -1328,6 +1328,7 @@ body {
 }
 
 
+
 /* CARRUSSSEEEEEl */
 
 .titulo-carrusel {
@@ -1365,6 +1366,7 @@ body {
 .contenedor-img-producto {
   width: 100%;
   max-width: 250px;
+  min-width: 200px;
   height: 300px;
   margin: 0 auto;
   overflow: hidden;
@@ -1386,17 +1388,23 @@ body {
 
 @media (max-width: 767.98px) {
   .carousel-item .row {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: flex;
+    justify-content: center;
   }
 
   .carousel-item .col-md-4 {
-    flex: 0 0 50%; 
-    max-width: 50%;
-    scroll-snap-align: center;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
+
+@media (max-width: 767.98px) {
+  .btn-ver-mas {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
 
 
 
