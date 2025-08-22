@@ -1408,3 +1408,40 @@ body {
 .elegante .titulo-coleccion { color: #dbb4c8; }
 .natural .titulo-coleccion { color: #dbb4c8; }
 .atrevida .titulo-coleccion { color: #dbb4c8; }
+
+
+/* PRODUCTOS  */
+
+.producto {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.producto h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0;
+}
+
+.producto p {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.producto button {
+  margin-top: auto;
+  width: 100%;
+}
