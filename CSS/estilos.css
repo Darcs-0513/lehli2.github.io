@@ -191,6 +191,7 @@ header {
   padding: 0;
   overflow: hidden;
    margin-top: 3rem;
+     margin-bottom: 8rem;
 }
 
 .separador-img img {
@@ -1256,6 +1257,15 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
+
 /*CSS para que boostrap no se vea feo */
 
 /* HEADERRRR */
@@ -1263,6 +1273,8 @@ body {
 .nav-link {
   color: #dbb4c8 !important;
    font-family: 'Bricolage Grotesque', sans-serif;
+     font-size: 1.5rem;
+
 }
 
 .nav-link:hover {
