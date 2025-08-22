@@ -1388,15 +1388,28 @@ body {
 
 @media (max-width: 767.98px) {
   .carousel-item .row {
-    display: flex;
+    display: flex !important;
+    flex-wrap: nowrap !important;
     justify-content: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
   }
 
   .carousel-item .col-md-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    scroll-snap-align: center;
   }
 }
+
+@media (max-width: 767.98px) {
+  .carousel-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 
 @media (max-width: 767.98px) {
   .btn-ver-mas {
