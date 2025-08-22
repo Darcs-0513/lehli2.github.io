@@ -203,18 +203,13 @@ header {
 }
 
 
-
-
-
-
-
 /* ===================================*/
 /* ======= Productos Destacados  ==== */
 /* =================================== */
 .destacados {
   background-color: #dbd2db;
   padding: 2rem;
-   margin-top: 4rem;
+  margin-top: 4rem;
 }
 
 .contenedor-productos {
@@ -222,7 +217,6 @@ header {
   border-radius: 10px;
   padding: 2rem;
   background-color: #dbd2db;
-  margin: 0 auto;
 }
 
 .titulo-seccion {
@@ -234,13 +228,6 @@ header {
   margin-bottom: 2rem;
 }
 
-.grid-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
 .producto-card {
   background-color: #5a2e4c;
   color: #f5d9eb;
@@ -248,14 +235,27 @@ header {
   border-radius: 8px;
   text-align: center;
   font-family: 'Arial', sans-serif;
-  max-width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
-.producto-card img {
-  max-width: 100%;
-  border-radius: 4px;
+.contenedor-img-producto {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a2b47;
+  overflow: hidden;
+  border-radius: 10px;
   margin-bottom: 1rem;
+}
+
+.contenedor-img-producto img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .producto-card h3 {
@@ -271,7 +271,8 @@ header {
 }
 
 .producto-card button {
-   padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
   border: none;
   background-color: #dbd2db;
   color: #3b363c;
@@ -282,11 +283,12 @@ header {
 }
 
 .producto-card button:hover {
- background-color: #ffffff;
+  background-color: #ffffff;
   color: #5a2e4c;
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
+
 
 /* ===================================*/
 /* ======= VALORES =================== */
@@ -304,33 +306,25 @@ header {
   display: block;
 }
 
+/* ===================================*/
+/* ======= FOOTER =================== */
+/* =================================== */
 
-/* ===== FOOTER ===== */
-.footer-lehli { 
+.footer-lehli {
   background-color: #101820;
   color: #dbb4c8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .footer-item {
   text-align: center;
-  margin: 0.5rem 1rem;
-}
-
-.footer-item p {
-  margin: 0;
 }
 
 .footer-item.redes {
-  display: flex;
-  align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-item.redes a {
@@ -352,7 +346,6 @@ header {
   height: 30px;
 }
 
-/* Estilo para el correo */
 .correo-footer {
   color: #dbb4c8;
   text-decoration: none;
@@ -363,60 +356,6 @@ header {
 .correo-footer:hover {
   text-decoration: underline;
 }
-
-
-/* ==== MEDIA QUERIES PARA HEADER Y FOOTER ==== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    flex-wrap: wrap; /**/
-    padding: 1.5rem;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .logo-texto {
-    flex-basis: 100%;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .nav-centro {
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  .menu-centro {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2rem;
-    font-size: 1.1rem;
-  }
-
-  .nav-derecha {
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-
-  .nav-derecha .contacto-link {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-lehli {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .footer-item.redes {
-    justify-content: center;
-  }
-}
-
 
 
 /* ============================ */
@@ -1364,7 +1303,7 @@ body {
   width: 100%;
   max-width: 250px;
   min-width: 200px;
-  height: 260px; /* bajamos un poco */
+  height: 260px;
   margin: 0 auto;
   overflow: hidden;
   background-color: #4a2b47;
@@ -1401,5 +1340,9 @@ body {
     margin-bottom: 1rem;
   }
 }
+
+
+
+/* ACA TERMINA LO DEL CARRUSEL */
 
 
