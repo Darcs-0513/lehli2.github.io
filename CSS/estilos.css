@@ -1445,3 +1445,18 @@ body {
   margin-top: auto;
   width: 100%;
 }
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

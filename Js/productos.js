@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(productos => {
       const contenedores = {
-        "FW - 2022 - UPCYCLING": document.querySelectorAll(".bloque-coleccion.urban .producto-preview"),
-        "NEO FUTURE": document.querySelectorAll(".bloque-coleccion.elegante .producto-preview"),
-        "BOXI DENIM": document.querySelectorAll(".bloque-coleccion.natural .producto-preview"),
+        "COLECCION LEHLI": document.querySelectorAll(".bloque-coleccion.urban .producto-preview"),
+        "NEO FUTURE": document.querySelectorAll(".bloque-coleccion.natural .producto-preview"),
+        "BOXI DENIM": document.querySelectorAll(".bloque-coleccion.elegante .producto-preview"),
         "Stylings by LEHLI": document.querySelectorAll(".bloque-coleccion.atrevida .producto-preview")
       };
 
       const conteo = {
-        "FW - 2022 - UPCYCLING": 0,
+        "COLECCION LEHLI": 0,
         "NEO FUTURE": 0,
         "BOXI DENIM": 0,
         "Stylings by LEHLI": 0
