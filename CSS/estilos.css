@@ -1383,26 +1383,30 @@ body {
   object-fit: contain;
 }
 
+.carousel-item .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 /* MEDIAA QUERIES PARA QUE SE VEA BIEN */
 
-@media (max-width: 767.98px) {
-  .carousel-item .producto-carrusel {
-    flex: 0 0 80%;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .btn-ver-mas {
-    width: 70%;
-    margin: 0 auto;
-  }
-}
-
-/* Escritorio: 3 productos por slide */
 @media (min-width: 768px) {
   .carousel-item .producto-carrusel {
     flex: 0 0 33.3333%;
     max-width: 33.3333%;
+  }
+}
+
+/* Celular: 1 producto por slide */
+@media (max-width: 767.98px) {
+  .carousel-item .producto-carrusel {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .btn-ver-mas {
+    width: 70%;
+    margin: 0 auto;
   }
 }
