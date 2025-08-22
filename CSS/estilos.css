@@ -1383,30 +1383,46 @@ body {
   object-fit: contain;
 }
 
-.carousel-item .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* MEDIAA QUERIES PARA QUE SE VEA BIEN */
-
-@media (min-width: 768px) {
-  .carousel-item .producto-carrusel {
-    flex: 0 0 33.3333%;
-    max-width: 33.3333%;
-  }
-}
-
-/* Celular: 1 producto por slide */
+/* Estilo para que en cel se vean horizontalmente */
 @media (max-width: 767.98px) {
+  .carousel-item .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
   .carousel-item .producto-carrusel {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 30%;
+    max-width: 30%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .contenedor-img-producto {
+    height: 180px;
+  }
+
+  .producto-titulo {
+    font-size: 1rem;
+  }
+
+  .btn-ver-mas {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    width: 90%;
   }
   
   .btn-ver-mas {
     width: 70%;
     margin: 0 auto;
+  }
+}
+
+/* Escritorio: normal 3 productos por slide */
+@media (min-width: 768px) {
+  .carousel-item .producto-carrusel {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
   }
 }
