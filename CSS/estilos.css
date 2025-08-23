@@ -1416,6 +1416,7 @@ body {
   border-radius: 15px;
   height: 200px;
   box-shadow: inset 0 0 5px #00000066;
+   min-height: 260px;
 }
 
 /* Colores por colección */
@@ -1467,7 +1468,7 @@ body {
 
 /* Tarjetas Bootstrap mejoradas */
 .card-img-top {
-  height: 180px;
+  height: 260px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
@@ -1489,14 +1490,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1.2rem;
 }
 
 .card-title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
 .card-text {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
