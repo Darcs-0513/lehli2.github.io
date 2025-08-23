@@ -1501,3 +1501,26 @@ body {
 .card-text {
   font-size: 1rem;
 }
+
+
+/* PARA LOS FILTROS */
+
+.filtro-categorias {
+  background-color: #101820;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  border: 2px solid #dbb4c8;
+  box-shadow: 0 0 10px rgba(219, 180, 200, 0.2);
+}
+
+.filtro-categorias label {
+  color: #dbb4c8;
+  margin-right: 0.5rem;
+}
+
+#filtro {
+  background-color: #4a2b47;
+  color: #fff;
+  border: 1px solid #dbb4c8;
+}

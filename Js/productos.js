@@ -42,3 +42,23 @@ contenedores[categoria][0].appendChild(tarjeta);
       console.error("Error al cargar los productos:", error);
     });
 });
+
+
+
+// PARA EL FILTRO 
+document.addEventListener("DOMContentLoaded", function () {
+  const filtro = document.getElementById("filtro");
+  filtro.addEventListener("change", function () {
+    const seleccion = filtro.value;
+
+    document.querySelectorAll(".bloque-coleccion").forEach(bloque => {
+      const titulo = bloque.querySelector(".titulo-coleccion").textContent.trim();
+
+      if (seleccion === "todas" || titulo.toLowerCase() === seleccion.toLowerCase()) {
+        bloque.style.display = "block";
+      } else {
+        bloque.style.display = "none";
+      }
+    });
+  });
+});
