@@ -82,42 +82,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function renderDetalle(producto) {
   const contenedor = document.getElementById("detalle-producto");
+
   contenedor.innerHTML = `
-    <h2>${producto.nombre}</h2>
-    <div class="galeria">
-      <img src="${producto.imagen}" alt="${producto.nombre}">
-      <img src="${producto.imagen2}" alt="${producto.nombre} 2">
-    </div>
-    <p><strong>Precio:</strong> ${producto.precio}</p>
-    <p><strong>Disponibilidad:</strong> ${producto.stock}</p>
-    <p><strong>Descripción:</strong> ${producto.descripcion}</p>
-    <p><strong>Entrega:</strong> ${producto.entrega}</p>
-    <p><strong>Envío:</strong> ${producto.envio}</p>
-
-    <h3>Reseñas</h3>
-    <div id="resenas">
-      ${(producto.resenas || []).map(r => `
-        <div class="resena">
-          <p><strong>${r.usuario}</strong> ${"★".repeat(r.puntuacion)}</p>
-          <p>${r.comentario}</p>
+    <div class="row mt-5 align-items-center">
+      <!-- Galería de imágenes -->
+      <div class="col-md-6 mb-4">
+        <div id="galeriaProducto" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="${producto.imagen}" class="d-block w-100" alt="${producto.nombre}">
+            </div>
+            <div class="carousel-item">
+              <img src="${producto.imagen2}" class="d-block w-100" alt="${producto.nombre} 2">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#galeriaProducto" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#galeriaProducto" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
         </div>
-      `).join("")}
+      </div>
+
+      <!-- Información del producto -->
+      <div class="col-md-6">
+        <h2 class="mb-3 titulo-catalogo">${producto.nombre}</h2>
+        <p><strong>Precio:</strong> ${producto.precio}</p>
+        <p><strong>Disponibilidad:</strong> ${producto.stock}</p>
+        <p><strong>Entrega:</strong> ${producto.entrega}</p>
+        <p><strong>Envío:</strong> ${producto.envio}</p>
+        <p class="mt-3">${producto.descripcion}</p>
+
+        <button class="btn btn-dark mt-4" disabled>🛒 Agregar al carrito</button>
+      </div>
     </div>
 
-    <form id="form-resena">
-      <h4>Agregar una reseña</h4>
-      <input type="text" id="nombre" placeholder="Tu nombre" required />
-      <textarea id="comentario" placeholder="Comentario" required></textarea>
-      <label for="puntuacion">Puntuación:</label>
-      <select id="puntuacion">
-        <option value="5">★★★★★</option>
-        <option value="4">★★★★</option>
-        <option value="3">★★★</option>
-        <option value="2">★★</option>
-        <option value="1">★</option>
-      </select>
-      <button type="submit">Enviar</button>
-    </form>
+    <!-- Reseñas -->
+    <div class="mt-5">
+      <h3 class="mb-3">Reseñas de usuarios</h3>
+      <div id="resenas" class="mb-4">
+        ${(producto.resenas || []).map(r => `
+          <div class="border rounded p-3 mb-3 bg-light">
+            <p class="mb-1"><strong>${r.usuario}</strong> ${"★".repeat(r.puntuacion)}</p>
+            <p class="mb-0">${r.comentario}</p>
+          </div>
+        `).join("")}
+      </div>
+
+      <!-- Formulario reseña -->
+      <form id="form-resena" class="bg-dark text-light p-4 rounded">
+        <h4 class="mb-3">Agregar una reseña</h4>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Tu nombre</label>
+          <input type="text" id="nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="comentario" class="form-label">Comentario</label>
+          <textarea id="comentario" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="puntuacion" class="form-label">Puntuación</label>
+          <select id="puntuacion" class="form-select">
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★</option>
+            <option value="3">★★★</option>
+            <option value="2">★★</option>
+            <option value="1">★</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-light">Enviar reseña</button>
+      </form>
+    </div>
   `;
 
   document.getElementById("form-resena").addEventListener("submit", (e) => {
