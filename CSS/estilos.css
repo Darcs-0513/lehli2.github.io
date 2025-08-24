@@ -1623,8 +1623,17 @@ button:hover {
 
 /* Reseñas */
 
+#resenas .resena {
+ background-color: #ffffff; 
+  border: 2px solid #dbb4c8; 
+  color: #50314c; 
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
 .resena strong {
   color: #ffb700;
+  font-size: 1.1rem;
 }
 
 .resena {
@@ -1648,19 +1657,9 @@ button:hover {
   border: 1px solid #50314c;
 }
 
-#resenas .resena {
- background-color: #ffffff; 
-  border: 2px solid #dbb4c8; 
-  color: #50314c; 
-  padding: 1rem;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
 
-.resena strong {
-  color: #ffcc00;
-  font-size: 1.1rem;
-}
+
+
 
 /* PARA QUE LAS IMAGENES EN DETALLE SE VEAN DEL MISMO TAMANO */
 #galeriaProducto .carousel-inner img {
