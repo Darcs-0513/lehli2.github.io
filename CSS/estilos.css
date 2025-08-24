@@ -1543,15 +1543,33 @@ button:hover {
 }
 
 
+
+
+
+
+
 /* DETALLE DE PRODUCTOOOOOOSSS */
 #detalle-producto {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem auto;
   background: linear-gradient(to right, #f8f4f9, #f3f0f4);
   padding: 2rem;
   border-radius: 15px;
-  color: #000;
+  color: #101820;
 }
+
+#detalle-producto button.btn {
+  background-color: #dbb4c8;
+  color: #101820;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s ease;
+}
+
+#detalle-producto button.btn:hover {
+  background-color: #c997b5;
+}
+
 
 #detalle-producto h2 {
   color: #5a2a60; /* tono púrpura elegante */
@@ -1564,10 +1582,6 @@ button:hover {
   color: #101820;
 }
 
-
-
-
-
 .galeria {
   display: flex;
   gap: 1rem;
@@ -1578,6 +1592,17 @@ button:hover {
   width: 48%;
   border-radius: 10px;
   object-fit: cover;
+}
+
+/* Reseñas */
+#resenas .border {
+  border: 2px solid #dbb4c8 !important;
+  background-color: #fff0f6 !important;
+  border-radius: 10px;
+}
+
+.resena strong {
+  color: #ffb700;
 }
 
 .resena {
@@ -1614,3 +1639,11 @@ button:hover {
   font-size: 1.1rem;
 }
 
+/* PARA QUE LAS IMAGENES EN DETALLE SE VEAN DEL MISMO TAMANO */
+#galeriaProducto .carousel-inner img {
+  height: 400px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+}
