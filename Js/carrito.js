@@ -5,22 +5,40 @@ document.addEventListener("DOMContentLoaded", () => {
 function mostrarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contenedor = document.getElementById("carrito-items");
-  const totalEl = document.getElementById("total-carrito");
+
+  // NUEVO: capturamos los spans del desglose
+  const subtotalEl = document.getElementById("subtotal-carrito");
+  const envioEl    = document.getElementById("envio-carrito");
+  const totalEl    = document.getElementById("total-carrito");
+  const notaEnvio  = document.getElementById("envio-nota");
+
   contenedor.innerHTML = "";
 
+  // 🔴 FALTABA ESTO
   let total = 0;
+
+  // para el envío/desglose
   let totalEnvio = 0;
+  let hayNoDisponible = false;
+  let hayConEnvio = false;
+  const ENVIO_POR_UNIDAD = false;
 
   carrito.forEach((producto, index) => {
     const precioLimpio = parseFloat(producto.precio.replace(/[₡,.]/g, "").trim());
     const subtotal = producto.cantidad * precioLimpio;
     total += subtotal;
-    // Si el producto tiene envío con ₡, lo sumamos
-if (producto.envio && producto.envio.includes("₡")) {
-  const envioValor = parseFloat(producto.envio.replace(/[₡,.a-zA-Z ]/g, ""));
-  totalEnvio += envioValor;
-}
 
+    // Envío
+    if (producto.envio) {
+      if (/no disponible/i.test(producto.envio)) {
+        hayNoDisponible = true;
+      } else if (producto.envio.includes("₡")) {
+        hayConEnvio = true;
+        // "₡2.500 nacional" -> 2500
+        const envioValor = parseInt(producto.envio.replace(/[^\d]/g, ""), 10) || 0;
+        totalEnvio += ENVIO_POR_UNIDAD ? envioValor * (producto.cantidad || 1) : envioValor;
+      }
+    }
 
     contenedor.innerHTML += `
       <div class="item-carrito d-flex gap-4 align-items-center">
@@ -38,10 +56,23 @@ if (producto.envio && producto.envio.includes("₡")) {
     `;
   });
 
-const totalFinal = total + totalEnvio;
-totalEl.textContent = totalFinal.toLocaleString("es-CR");
+  // Pintar SUBTOTAL / ENVÍO / TOTAL
+  const totalFinal = total + totalEnvio;
+  if (subtotalEl) subtotalEl.textContent = total.toLocaleString("es-CR");
+  if (envioEl)    envioEl.textContent    = totalEnvio.toLocaleString("es-CR");
+  if (totalEl)    totalEl.textContent    = totalFinal.toLocaleString("es-CR");
 
-
+  if (notaEnvio) {
+    if (hayNoDisponible && hayConEnvio) {
+      notaEnvio.textContent = "Algunos artículos no tienen envío disponible.";
+    } else if (hayNoDisponible && !hayConEnvio) {
+      notaEnvio.textContent = "No hay envío disponible para los artículos seleccionados.";
+    } else if (hayConEnvio) {
+      notaEnvio.textContent = "Incluye envío nacional cuando aplica.";
+    } else {
+      notaEnvio.textContent = "";
+    }
+  }
   // Evento para cambios de cantidad
   document.querySelectorAll(".cantidad-input").forEach(input => {
     input.addEventListener("change", (e) => {
@@ -49,14 +80,14 @@ totalEl.textContent = totalFinal.toLocaleString("es-CR");
   const nuevaCantidad = parseInt(e.target.value);
 
   if (nuevaCantidad <= 0) {
-    carrito.splice(index, 1); // ✅ eliminar si es 0
+    carrito.splice(index, 1); 
   } else {
     carrito[index].cantidad = nuevaCantidad;
   }
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  mostrarCarrito(); // ✅ refresca la lista
-  actualizarContadorCarrito();D
+  mostrarCarrito(); 
+  actualizarContadorCarrito();
     });
   });
 }

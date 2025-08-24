@@ -65,10 +65,26 @@
   <main class="container mt-5" id="carrito-contenedor">
     <h2>🛒 Tu carrito de compras</h2>
     <div id="carrito-items"></div>
-    <div class="mt-4">
-      <strong>Total: ₡<span id="total-carrito">0</span></strong>
-      <button class="btn btn-success ms-3">Finalizar compra</button>
-    </div>
+   <div class="mt-4 d-flex flex-column align-items-end gap-1" id="resumen-carrito">
+  <div class="resumen-line">
+    <span>Subtotal:</span>
+    <strong>₡<span id="subtotal-carrito">0</span></strong>
+  </div>
+
+  <div class="resumen-line">
+    <span>Envío:</span>
+    <strong>₡<span id="envio-carrito">0</span></strong>
+    <small id="envio-nota" class="text-muted ms-2"></small>
+  </div>
+
+  <div class="resumen-line fs-5">
+    <span>Total a pagar:</span>
+    <strong>₡<span id="total-carrito">0</span></strong>
+  </div>
+
+  <button class="btn btn-success ms-0 mt-2">Finalizar compra</button>
+</div>
+
   </main>
 
 

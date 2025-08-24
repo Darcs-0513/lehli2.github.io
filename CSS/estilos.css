@@ -1790,3 +1790,25 @@ button:hover {
   font-weight: bold;
   font-size: 0.85rem;
 }
+
+/* Un desgloce mas bueno de los productos */
+/* Resumen carrito (desglose) */
+#resumen-carrito {
+  max-width: 420px;
+  background: #ffffff;
+  border: 2px solid #dbb4c8;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 10px rgba(219, 180, 200, 0.15);
+}
+
+#resumen-carrito .resumen-line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #50314c;
+}
+
+#resumen-carrito .fs-5 {
+  color: #101820;
+}
