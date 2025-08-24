@@ -126,7 +126,7 @@ function renderDetalle(producto) {
       <h3 class="mb-3">Reseñas de usuarios</h3>
       <div id="resenas" class="mb-4">
         ${(producto.resenas || []).map(r => `
-          <div class="border rounded p-3 mb-3 bg-light">
+          <div class="resena">
             <p class="mb-1"><strong>${r.usuario}</strong> ${"★".repeat(r.puntuacion)}</p>
             <p class="mb-0">${r.comentario}</p>
           </div>
