@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       productos.forEach(producto => {
-        const categoria = producto.categoria;
+        const categoria = producto.coleccion;
         if (contenedores[categoria] && conteo[categoria] < 2) {
           const html = `
             <div class="card text-center bg-dark text-light h-100">
