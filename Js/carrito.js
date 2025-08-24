@@ -9,11 +9,18 @@ function mostrarCarrito() {
   contenedor.innerHTML = "";
 
   let total = 0;
+  let totalEnvio = 0;
 
   carrito.forEach((producto, index) => {
     const precioLimpio = parseFloat(producto.precio.replace(/[₡,.]/g, "").trim());
     const subtotal = producto.cantidad * precioLimpio;
     total += subtotal;
+    // Si el producto tiene envío con ₡, lo sumamos
+if (producto.envio && producto.envio.includes("₡")) {
+  const envioValor = parseFloat(producto.envio.replace(/[₡,.a-zA-Z ]/g, ""));
+  totalEnvio += envioValor;
+}
+
 
     contenedor.innerHTML += `
       <div class="item-carrito d-flex gap-4 align-items-center">
@@ -22,7 +29,7 @@ function mostrarCarrito() {
           <strong>${producto.nombre}</strong><br>
           Precio: ${producto.precio}<br>
           Cantidad:
-          <input type="number" min="1" value="${producto.cantidad}" data-index="${index}" class="cantidad-input" />
+          <input type="number" min="0" value="${producto.cantidad}" data-index="${index}" class="cantidad-input" />
         </div>
         <div>
           <button class="btn btn-danger" onclick="eliminarProducto(${index})">❌</button>
@@ -31,16 +38,25 @@ function mostrarCarrito() {
     `;
   });
 
-  totalEl.textContent = total.toLocaleString("es-CR");
+const totalFinal = total + totalEnvio;
+totalEl.textContent = totalFinal.toLocaleString("es-CR");
+
 
   // Evento para cambios de cantidad
   document.querySelectorAll(".cantidad-input").forEach(input => {
     input.addEventListener("change", (e) => {
-      const index = e.target.getAttribute("data-index");
-      carrito[index].cantidad = parseInt(e.target.value);
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      mostrarCarrito();
-      actualizarContadorCarrito(); // 🟢 ACTUALIZA CONTADOR AL CAMBIAR CANTIDAD
+  const index = e.target.getAttribute("data-index");
+  const nuevaCantidad = parseInt(e.target.value);
+
+  if (nuevaCantidad <= 0) {
+    carrito.splice(index, 1); // ✅ eliminar si es 0
+  } else {
+    carrito[index].cantidad = nuevaCantidad;
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  mostrarCarrito(); // ✅ refresca la lista
+  actualizarContadorCarrito();D
     });
   });
 }
@@ -51,6 +67,7 @@ function eliminarProducto(index) {
   carrito.splice(index, 1);
   localStorage.setItem("carrito", JSON.stringify(carrito));
   mostrarCarrito();
+  actualizarContadorCarrito(); 
 }
 
 document.addEventListener("DOMContentLoaded", () => {
