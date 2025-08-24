@@ -1655,7 +1655,9 @@ button:hover {
 }
 
 #resenas .resena {
-  background-color: #50314c;
+ background-color: #ffffff; 
+  border: 2px solid #dbb4c8; 
+  color: #50314c; 
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
