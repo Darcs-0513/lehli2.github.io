@@ -1552,7 +1552,7 @@ button:hover {
 #detalle-producto {
   max-width: 900px;
   margin: 2rem auto;
-  background: linear-gradient(to right, #50314c, #50314c);
+  background: linear-gradient(to right, #50314c, #f5d9eb);
   padding: 2rem;
   border-radius: 15px;
   color: #101820;
@@ -1581,6 +1581,21 @@ button:hover {
   opacity: 0.7;
   cursor: not-allowed;
 }
+
+/* ANIMACION */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+#detalle-producto button.btn:hover .icono-carrito {
+  animation: bounce 0.6s ease infinite;
+}
+
 
 
 #detalle-producto h2 {
