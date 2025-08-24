@@ -114,7 +114,7 @@ function renderDetalle(producto) {
         <p><strong>Envío:</strong> ${producto.envio}</p>
         <p class="mt-3">${producto.descripcion}</p>
 
-        <button class="btn btn-dark mt-4" disabled>
+        <button class="btn btn-dark mt-4">
             <span class="icono-carrito">🛒</span> Agregar al carrito
         </button>
 
