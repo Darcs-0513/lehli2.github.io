@@ -1552,7 +1552,7 @@ button:hover {
 #detalle-producto {
   max-width: 900px;
   margin: 2rem auto;
-  background: linear-gradient(to right, #50314c, #f5d9eb);
+  background: linear-gradient(to right, #50314c, #dbb4c8);
   padding: 2rem;
   border-radius: 15px;
   color: #101820;
