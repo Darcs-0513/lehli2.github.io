@@ -1767,3 +1767,26 @@ button:hover {
   background-color: #c997b5;
   transform: scale(1.05);
 }
+
+.carrito-link {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #dbb4c8 !important;
+  text-decoration: none;
+}
+
+@keyframes pulseAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulseAnim 0.3s ease;
+}
+
+#contador-carrito {
+  font-weight: bold;
+  font-size: 0.85rem;
+}

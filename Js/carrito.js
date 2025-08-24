@@ -70,3 +70,8 @@ function mostrarToast(mensaje) {
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 3000);
 }
+
+// para contador 
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarContadorCarrito();
+});
