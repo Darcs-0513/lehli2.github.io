@@ -162,14 +162,19 @@ function renderDetalle(producto) {
     e.preventDefault();
     alert("Gracias por tu reseña ❤️ (esto se podría guardar local si quisiéramos)");
   });
+
+
+// Asignar evento al botón después de que existe en el DOM
+const btnAgregar = document.querySelector(".btn-dark");
+btnAgregar.addEventListener("click", () => {
+  agregarAlCarrito(producto);
+});
+
+
 }
 t
 
 // PARA EL CARRITOOOO
-
-document.querySelector('.btn-dark').addEventListener('click', () => {
-  agregarAlCarrito(producto);
-});
 
 function agregarAlCarrito(producto) {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
