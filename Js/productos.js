@@ -1,3 +1,18 @@
+function mostrarToast(mensaje) {
+  const toast = document.createElement("div");
+  toast.className = "toast position-fixed bottom-0 end-0 m-3 text-bg-dark show";
+  toast.style.zIndex = "9999";
+  toast.setAttribute("role", "alert");
+  toast.innerHTML = `
+    <div class="toast-body">
+      ${mensaje}
+    </div>
+  `;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch("Json/productos.json")
     .then(response => response.json())
@@ -195,29 +210,18 @@ function agregarAlCarrito(producto) {
 function actualizarContadorCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const total = carrito.reduce((acc, p) => acc + p.cantidad, 0);
-  document.getElementById("contador-carrito").textContent = total;
-  contador.classList.add("pulse");
-  setTimeout(() => contador.classList.remove("pulse"), 300);
 
+  const contador = document.getElementById("contador-carrito");
+  if (contador) {
+    contador.textContent = total;
+    contador.classList.add("pulse");
+    setTimeout(() => contador.classList.remove("pulse"), 300);
+  }
 }
+
 
 // Llamar al cargar la página
 actualizarContadorCarrito();
-
-// Para que salga al precionar el btn 
-function mostrarToast(mensaje) {
-  const toast = document.createElement("div");
-  toast.className = "toast position-fixed bottom-0 end-0 m-3 text-bg-dark show";
-  toast.style.zIndex = "9999";
-  toast.setAttribute("role", "alert");
-  toast.innerHTML = `
-    <div class="toast-body">
-      ${mensaje}
-    </div>
-  `;
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 3000);
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   actualizarContadorCarrito();

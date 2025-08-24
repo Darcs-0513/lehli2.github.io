@@ -12,27 +12,26 @@ function mostrarCarrito() {
 
   carrito.forEach((producto, index) => {
     const precioLimpio = parseFloat(producto.precio.replace(/[₡,.]/g, "").trim());
-const subtotal = producto.cantidad * precioLimpio;
+    const subtotal = producto.cantidad * precioLimpio;
     total += subtotal;
 
     contenedor.innerHTML += `
-<div class="item-carrito d-flex gap-4 align-items-center">
-  <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100px; height: auto; border-radius: 10px;">
-  <div class="flex-grow-1">
-    <strong>${producto.nombre}</strong><br>
-    Precio: ${producto.precio}<br>
-    Cantidad:
-    <input type="number" min="1" value="${producto.cantidad}" data-index="${index}" class="cantidad-input" />
-  </div>
-  <div>
-    <button class="btn btn-danger" onclick="eliminarProducto(${index})">❌</button>
-  </div>
-</div>
-`;
-
+      <div class="item-carrito d-flex gap-4 align-items-center">
+        <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100px; height: auto; border-radius: 10px;">
+        <div class="flex-grow-1">
+          <strong>${producto.nombre}</strong><br>
+          Precio: ${producto.precio}<br>
+          Cantidad:
+          <input type="number" min="1" value="${producto.cantidad}" data-index="${index}" class="cantidad-input" />
+        </div>
+        <div>
+          <button class="btn btn-danger" onclick="eliminarProducto(${index})">❌</button>
+        </div>
+      </div>
+    `;
   });
 
-totalEl.textContent = total.toLocaleString("es-CR");
+  totalEl.textContent = total.toLocaleString("es-CR");
 
   // Evento para cambios de cantidad
   document.querySelectorAll(".cantidad-input").forEach(input => {
@@ -40,10 +39,12 @@ totalEl.textContent = total.toLocaleString("es-CR");
       const index = e.target.getAttribute("data-index");
       carrito[index].cantidad = parseInt(e.target.value);
       localStorage.setItem("carrito", JSON.stringify(carrito));
-      mostrarCarrito(); // recargar todo
+      mostrarCarrito();
+      actualizarContadorCarrito(); // 🟢 ACTUALIZA CONTADOR AL CAMBIAR CANTIDAD
     });
   });
 }
+
 
 function eliminarProducto(index) {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
