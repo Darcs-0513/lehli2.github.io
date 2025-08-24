@@ -1466,6 +1466,23 @@ body {
   width: 100%;
 }
 
+button {
+  background-color: #dbb4c8;
+  color: #101820;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c999b6;
+}
+
+
+
+
 /* Tarjetas Bootstrap mejoradas */
 .card-img-top {
   height: 260px;
@@ -1530,11 +1547,26 @@ body {
 #detalle-producto {
   max-width: 800px;
   margin: 2rem auto;
-  background: #fff;
+  background: linear-gradient(to right, #f8f4f9, #f3f0f4);
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 15px;
   color: #000;
 }
+
+#detalle-producto h2 {
+  color: #5a2a60; /* tono púrpura elegante */
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+#detalle-producto h3 {
+  margin-top: 2rem;
+  color: #101820;
+}
+
+
+
+
 
 .galeria {
   display: flex;
@@ -1576,3 +1608,9 @@ body {
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+
+.resena strong {
+  color: #ffcc00;
+  font-size: 1.1rem;
+}
+
