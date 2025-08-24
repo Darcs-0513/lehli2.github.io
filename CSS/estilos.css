@@ -1552,10 +1552,10 @@ button:hover {
 #detalle-producto {
   max-width: 900px;
   margin: 2rem auto;
-  background: linear-gradient(to right, #50314c, #dbb4c8);
+  background: #50314c;
   padding: 2rem;
   border-radius: 15px;
-  color: #101820;
+  color: #dbb4c8;
 }
 
 #detalle-producto button.btn {
@@ -1599,14 +1599,14 @@ button:hover {
 
 
 #detalle-producto h2 {
-  color: #5a2a60; /* tono púrpura elegante */
+  color: #dbb4c8; /* tono púrpura elegante */
   font-weight: 700;
   font-size: 2.2rem;
 }
 
 #detalle-producto h3 {
   margin-top: 2rem;
-  color: #101820;
+  color: #dbb4c8;
 }
 
 .galeria {
