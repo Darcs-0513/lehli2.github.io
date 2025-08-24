@@ -4,55 +4,124 @@
     "nombre": "Falda Retazos",
     "precio": "₡20.000",
     "imagen": "img/DiseñoFald.png",
-    "categoria": "COLECCION LEHLI"
+    "imagen2": "img/DiseñoFald2.png",
+    "coleccion": "COLECCION LEHLI",
+    "stock": "Disponible online y en tienda",
+    "descripcion": "Transforma tu estilo con esta falda creada a partir de retazos reciclados. Su diseño asimétrico y costuras visibles la convierten en una pieza única, eco-chic y moderna.",
+    "entrega": "3 a 5 días hábiles",
+    "envio": "₡2.500 nacional",
+    "resenas": [
+      { "usuario": "María J.", "comentario": "Me encanta cómo se ajusta al cuerpo y el diseño es súper original.", "puntuacion": 5 },
+      { "usuario": "Paola R.", "comentario": "La tela es cómoda pero me hubiera gustado un poco más de largo.", "puntuacion": 4 }
+    ]
   },
   {
     "id": 2,
     "nombre": "Corset Strapple",
     "precio": "₡15.000",
     "imagen": "img/FtCorsetFrente.png",
-    "categoria": "COLECCION LEHLI"
+    "imagen2": "img/FtCorsetEspalda.png",
+    "coleccion": "COLECCION LEHLI",
+    "stock": "Disponible solo en tienda física",
+    "descripcion": "Corset moderno sin tirantes, con acabados limpios y estructura firme. Ideal para elevar cualquier outfit con un toque sensual y elegante.",
+    "entrega": "Listo para retiro inmediato",
+    "envio": "No disponible para envío",
+    "resenas": [
+      { "usuario": "Laura M.", "comentario": "Perfecto para salidas de noche, se siente de excelente calidad.", "puntuacion": 5 }
+    ]
   },
   {
     "id": 3,
     "nombre": "Jort Camouflaged",
     "precio": "₡15.000",
     "imagen": "img/DiseñoJort1.png",
-    "categoria": "BOXI DENIM"
+    "imagen2": "img/DiseñoJort2.png",
+    "coleccion": "BOXI DENIM",
+    "stock": "Disponible online",
+    "descripcion": "Shorts tipo jorts en mezclilla con detalles camuflados y corte relajado. Perfectos para looks urbanos y frescos.",
+    "entrega": "2 a 4 días hábiles",
+    "envio": "₡2.000 nacional",
+    "resenas": [
+      { "usuario": "José C.", "comentario": "Los uso casi todos los días, son frescos y combinan con todo.", "puntuacion": 5 },
+      { "usuario": "Andrés P.", "comentario": "Buen diseño, pero me hubiera gustado un tono más oscuro.", "puntuacion": 4 }
+    ]
   },
   {
     "id": 4,
     "nombre": "Chaqueta Colección",
     "precio": "₡20.000",
     "imagen": "img/SueFront.png",
-    "categoria": "BOXI DENIM"
+    "imagen2": "img/SueBack.png",
+    "coleccion": "BOXI DENIM",
+    "stock": "Disponible online y tienda",
+    "descripcion": "Chaqueta de corte oversized con detalles únicos. Ideal para días frescos o para crear capas con estilo. Combina con todo.",
+    "entrega": "3 a 6 días hábiles",
+    "envio": "₡2.500 nacional",
+    "resenas": [
+      { "usuario": "Camila H.", "comentario": "Literal mi prenda favorita. Combina con todo. <3", "puntuacion": 5 },
+      { "usuario": "Valeria N.", "comentario": "Muy cool, pero algo pesada para el clima de mi zona.", "puntuacion": 4 }
+    ]
   },
   {
     "id": 5,
     "nombre": "Pantalón Colección",
     "precio": "₡20.000",
     "imagen": "img/PantFront.jpg",
-    "categoria": "NEO FUTURE"
+    "imagen2": "img/PantBack.jpg",
+    "coleccion": "NEO FUTURE",
+    "stock": "Disponible en tienda",
+    "descripcion": "Pantalón de diseño estructurado con cortes futuristas. Tela resistente, cómoda y con mucho estilo.",
+    "entrega": "Disponible para retiro inmediato",
+    "envio": "₡3.000 nacional",
+    "resenas": [
+      { "usuario": "Sebastián M.", "comentario": "Me gusta el diseño, pero el tallaje es más reducido.", "puntuacion": 3 }
+    ]
   },
   {
     "id": 6,
     "nombre": "Styling 1",
     "precio": "₡35.000",
     "imagen": "img/Modelo1.jpg",
-    "categoria": "NEO FUTURE"
+    "imagen2": "img/Modelo1b.jpg",
+    "coleccion": "NEO FUTURE",
+    "stock": "Disponible online",
+    "descripcion": "Un conjunto de impacto para quien ama destacar. Incluye elementos de varias colecciones con una mezcla atrevida y sofisticada.",
+    "entrega": "3 a 5 días hábiles",
+    "envio": "₡3.500 nacional",
+    "resenas": [
+      { "usuario": "Daniela F.", "comentario": "¡Todo el mundo me preguntó de dónde era este conjunto!", "puntuacion": 5 },
+      { "usuario": "Fabián G.", "comentario": "Muy original. Vale la pena totalmente.", "puntuacion": 5 }
+    ]
   },
   {
     "id": 7,
     "nombre": "Styling 2",
     "precio": "₡35.000",
     "imagen": "img/Modelo2 (1).jpg",
-    "categoria": "Stylings by LEHLI"
+    "imagen2": "img/Modelo2b.jpg",
+    "coleccion": "Stylings by LEHLI",
+    "stock": "Disponible bajo pedido",
+    "descripcion": "Una propuesta estilística para eventos especiales o shootings. Mezcla tonos tierra con toques metálicos, ideal para looks editoriales.",
+    "entrega": "7 días hábiles tras pedido",
+    "envio": "₡3.500 nacional",
+    "resenas": [
+      { "usuario": "Melissa Q.", "comentario": "Siento que fue hecho para mí. ¡Me encantó el estilo tan diferente!", "puntuacion": 5 }
+    ]
   },
   {
     "id": 8,
     "nombre": "Styling 3",
     "precio": "₡35.000",
     "imagen": "img/Modelo3.jpg",
-    "categoria": "Stylings by LEHLI"
+    "imagen2": "img/Modelo3b.jpg",
+    "coleccion": "Stylings by LEHLI",
+    "stock": "Disponible online",
+    "descripcion": "Outfit de edición limitada con piezas seleccionadas de colecciones anteriores. Reinterpretación del estilo Lehli con enfoque editorial.",
+    "entrega": "3 a 5 días hábiles",
+    "envio": "₡3.500 nacional",
+    "resenas": [
+      { "usuario": "Ana V.", "comentario": "Lo amé. Me sentí como una modelo con este look.", "puntuacion": 5 },
+      { "usuario": "Esteban D.", "comentario": "Muy editorial, pero me gustaría poder comprar las piezas por separado.", "puntuacion": 4 }
+    ]
   }
 ]

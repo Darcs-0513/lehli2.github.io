@@ -1524,3 +1524,48 @@ body {
   color: #fff;
   border: 1px solid #dbb4c8;
 }
+
+
+/* DETALLE DE PRODUCTOOOOOOSSS */
+#detalle-producto {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #000;
+}
+
+.galeria {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.galeria img {
+  width: 48%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.resena {
+  background-color: #f3f3f3;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+#form-resena {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+#form-resena input,
+#form-resena textarea,
+#form-resena select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
