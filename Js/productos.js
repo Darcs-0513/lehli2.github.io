@@ -114,9 +114,8 @@ function renderDetalle(producto) {
         <p><strong>Envío:</strong> ${producto.envio}</p>
         <p class="mt-3">${producto.descripcion}</p>
 
-        <button class="btn btn-dark mt-4">
-            <span class="icono-carrito">🛒</span> Agregar al carrito
-        </button>
+        <button class="btn btn-dark mt-4" data-id="${producto.id}">🛒 Agregar al carrito</button>
+
 
       </div>
     </div>
@@ -164,3 +163,36 @@ function renderDetalle(producto) {
     alert("Gracias por tu reseña ❤️ (esto se podría guardar local si quisiéramos)");
   });
 }
+t
+
+// PARA EL CARRITOOOO
+
+document.querySelector('.btn-dark').addEventListener('click', () => {
+  agregarAlCarrito(producto);
+});
+
+function agregarAlCarrito(producto) {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  const existente = carrito.find(p => p.id === producto.id);
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarContadorCarrito();
+  alert("Producto agregado al carrito 🛒");
+}
+
+
+function actualizarContadorCarrito() {
+  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const total = carrito.reduce((acc, p) => acc + p.cantidad, 0);
+  document.getElementById("contador-carrito").textContent = total;
+}
+
+// Llamar al cargar la página
+actualizarContadorCarrito();
+
