@@ -108,12 +108,14 @@ function renderDetalle(producto) {
       <!-- Información del producto -->
       <div class="col-md-6">
         <h2 class="mb-3 titulo-catalogo">${producto.nombre}</h2>
+         <div class="info-producto">
         <p><strong>Precio:</strong> ${producto.precio}</p>
         <p><strong>Disponibilidad:</strong> ${producto.stock}</p>
         <p><strong>Entrega:</strong> ${producto.entrega}</p>
         <p><strong>Envío:</strong> ${producto.envio}</p>
         <p class="mt-3">${producto.descripcion}</p>
-
+        </div>
+        
         <button class="btn btn-dark mt-4" disabled>🛒 Agregar al carrito</button>
       </div>
     </div>
