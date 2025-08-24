@@ -1624,7 +1624,7 @@ button:hover {
 /* Reseñas */
 #resenas .border {
   border: 2px solid #dbb4c8 !important;
-  background-color: #50314c !important;
+  background-color: #fff0f6 !important;
   border-radius: 10px;
 }
 
@@ -1651,7 +1651,7 @@ button:hover {
 #form-resena select {
   padding: 0.5rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #50314c;
 }
 
 #resenas .resena {
