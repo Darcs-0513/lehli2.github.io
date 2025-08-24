@@ -1622,18 +1622,12 @@ button:hover {
 }
 
 /* Reseñas */
-#resenas .border {
-  border: 2px solid #dbb4c8 !important;
-  background-color: #fff0f6 !important;
-  border-radius: 10px;
-}
 
 .resena strong {
   color: #ffb700;
 }
 
 .resena {
-  background-color: #50314c;
   padding: 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
