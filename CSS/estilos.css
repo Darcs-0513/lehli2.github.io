@@ -734,6 +734,25 @@ header {
     padding-left: 0;
   }
 }
+ 
+/* ======= ACERCA DE (Bootstrap) ======= */
+body.acerca-page { background-color: #DBD2DB; }
+
+.acerca-card {
+  background: #ffffff;
+  color: #101820;
+  border-color: #dbb4c8;
+  border-radius: 12px;
+}
+
+.acerca-card .list-group-item {
+  background: #ffffff;
+  border-color: #ead4e2;
+}
+
+.acerca-foto { max-width: 220px; }
+
+
 
 /* ============================ */
 /* ======== CONTACTO ========= */
