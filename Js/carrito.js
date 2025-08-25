@@ -297,22 +297,72 @@ expiracion.addEventListener("paste", (e) => {
     btn.textContent = "Procesando...";
 
     setTimeout(() => {
-      // Cerrar modal
-      const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-      modal.hide();
+  // Capturar valores mostrados en el modal
+  const mEnvio = localStorage.getItem("metodoEnvio") || "tienda";
+  const sub = parseInt((document.getElementById("pago-subtotal")?.textContent || "0").replace(/[^\d]/g, ""), 10) || 0;
+  const env = parseInt((document.getElementById("pago-envio")?.textContent || "0").replace(/[^\d]/g, ""), 10) || 0;
+  const tot = parseInt((document.getElementById("pago-total")?.textContent || "0").replace(/[^\d]/g, ""), 10) || 0;
 
-      // Limpiar carrito y refrescar UI
-      localStorage.setItem("carrito", JSON.stringify([]));
-      mostrarCarrito();
-      actualizarContadorCarrito();
+  // Snapshot del carrito (antes de vaciar)
+  const carritoSnap = JSON.parse(localStorage.getItem("carrito") || "[]");
 
-      // Avisar al usuario
-      mostrarToast("¡Compra registrada correctamente! 🧾✨");
+  // Parser de precio unitario en CRC (coincide con el de mostrarCarrito)
+  const parseCRC = (s) => {
+    const txt = String(s || "");
+    const mCR = txt.match(/₡\s*([\d\.,]+)/);
+    return mCR ? parseInt(mCR[1].replace(/[^\d]/g, ""), 10) : parseInt(txt.replace(/[^\d]/g, ""), 10) || 0;
+  };
 
-      // Reset botón
-      btn.disabled = false;
-      btn.textContent = "Pagar ahora";
-    }, 900);
+  const items = carritoSnap.map(p => {
+    const precioUnit = parseCRC(p.precio);
+    return {
+      id: p.id,
+      nombre: p.nombre,
+      cantidad: p.cantidad,
+      precioUnit,
+      subtotal: precioUnit * p.cantidad
+    };
+  });
+
+  // Marca y tarjeta enmascarada
+  const num = numTarjeta.value;
+  const last4 = num.slice(-4);
+  const marca = esAmex(num) ? "American Express" : (num.startsWith("4") ? "Visa" : "Mastercard");
+  const enmascarada = "•••• •••• •••• " + last4;
+
+  // Crear factura y guardar
+  const factura = {
+    id: "LHL-" + Date.now(),
+    fechaISO: new Date().toISOString(),
+    metodoEnvio: mEnvio,
+    subtotal: sub,
+    envio: env,
+    total: tot,
+    items,
+    pago: {
+      marca,
+      enmascarada,
+      titular: document.getElementById("titular").value.trim()
+    }
+  };
+  localStorage.setItem("ultimaFactura", JSON.stringify(factura));
+
+  // Vaciar carrito y refrescar contador
+  localStorage.setItem("carrito", JSON.stringify([]));
+  actualizarContadorCarrito();
+
+  // Cerrar modal y redirigir a factura
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.hide();
+
+  // Redirigir a la factura
+  window.location.href = "factura.html";
+
+  // Reset botón
+  btn.disabled = false;
+  btn.textContent = "Pagar ahora";
+}, 900);
+
   });
 }
 
