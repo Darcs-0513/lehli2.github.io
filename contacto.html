@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LEHLI | Marca de Ropa</title>
-  <!-- Bootstrap CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | LEHLI</title>
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Tu CSS personalizado (después para que sobrescriba si es necesario) -->
-  <link rel="stylesheet" href="./CSS/estilos.css">  
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="./CSS/estilos.css">
 
-  <!-- Bootstrap Bundle JS (con Popper incluido) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Leaflet (mapa) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
 </head>
 <body>
 
-<!-- HEADEEEERR -->
-  <nav class="navbar navbar-expand-lg" style="background-color: #101820;">
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg" style="background-color:#101820;">
   <div class="container-fluid">
-    <!-- Logo y nombre -->
     <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
       <img src="img/logoL.png" alt="Logo Lehli" height="50">
       <span class="titulo-sitio">Lehli Fashion</span>
     </a>
 
-    <!-- Botón hamburguesa -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLehli" aria-controls="navbarLehli" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menú -->
     <div class="collapse navbar-collapse justify-content-between" id="navbarLehli">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
         <li class="nav-item"><a class="nav-link text-light" href="index.html">Inicio</a></li>
@@ -37,68 +40,214 @@
         <li class="nav-item"><a class="nav-link text-light" href="blog.html">Blog</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="preguntasFrec.html">Preguntas frecuentes</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="acercade.html">Acerca de</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link text-light active" href="contacto.html">Contacto</a></li>
 
+    
+        <li class="nav-item">
+          <a href="carrito.html" class="btn position-relative carrito-link">
+            🛒 Carrito
+            <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+        </li> 
       </ul>
     </div>
   </div>
 </nav>
 
+<!-- CONTENIDO -->
+<main class="container py-5">
+  <div class="row g-4">
 
-  <main class="contacto-main">
-    <section class="contacto-info">
-      <h1>¿Querés hablarnos?</h1>
-      <p>Estamos disponibles para consultas, sugerencias o simplemente para decirnos “hola”. 💬</p>
+    <!-- Columna IZQ: datos + mapa -->
+    <div class="col-12 col-lg-5">
+      <div class="card shadow-sm mb-4">
+        <div class="card-body">
+          <h1 class="h3 mb-2" style="color:#50314c;">¿Querés hablarnos?</h1>
+          <p class="text-muted mb-3">Estamos disponibles para consultas, sugerencias o simplemente para decirnos “hola”. 💬</p>
 
-      <div class="contacto-datos">
-        <p><strong>Correo:</strong> info@lehli.com</p>
-        <p><strong>Teléfono:</strong> (+506) 8691-0202</p>
-        <p><strong>Ubicación:</strong> San José, Costa Rica</p>
-        <p><strong>Horario:</strong> Lunes a Viernes, 9am - 5pm</p>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-bold">Teléfono</div>
+                (+506) 8691-0202
+              </div>
+              <span class="badge rounded-pill" style="background:#dbb4c8;color:#101820;">LEHLI</span>
+            </li>
+            <li class="list-group-item">
+              <div class="fw-bold">Dirección</div>
+              San José, Costa Rica
+            </li>
+            <li class="list-group-item">
+              <div class="fw-bold">Horario</div>
+              Lunes a Viernes · 9:00 a.m. – 5:00 p.m.
+            </li>
+            <li class="list-group-item">
+              <div class="fw-bold">Correo</div>
+              <a href="mailto:info@lehli.com">info@lehli.com</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </section>
 
-    <section class="contacto-formulario">
-      <h2>Formulario de contacto</h2>
-      <form id="form-lehli" onsubmit="return enviarFormulario()">
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
-
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" required>
-
-        <label for="tema">Motivo de contacto:</label>
-        <select id="tema" name="tema" required>
-          <option value="">Seleccione una opción</option>
-          <option value="sugerencia">Sugerencia</option>
-          <option value="compra">Consulta sobre producto</option>
-          <option value="otro">Otro</option>
-        </select>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-        <button type="submit">Enviar mensaje</button>
-      </form>
-
-      <div id="respuesta-envio" class="mensaje-envio"></div>
-    </section>
-  </main>
-
-  <footer class="footer-lehli">
-    <div class="footer-item">
-      <p>© 2025 LEHLI | Todos los derechos reservados</p>
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Nuestra ubicación</h2>
+          <div id="mapa-lehli" style="height:320px;border-radius:10px;overflow:hidden;"></div>
+          <small class="text-muted d-block mt-2">* Arrastrá y acercá para explorar el mapa.</small>
+        </div>
+      </div>
     </div>
 
-    <div class="footer-item redes">
+    <!-- Columna DER: formulario -->
+    <div class="col-12 col-lg-7">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h2 class="h4 mb-3">Formulario de contacto</h2>
+
+          <form id="form-contacto" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <!-- Email -->
+              <div class="col-12">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="tunombre@correo.com" autocomplete="email">
+                <div class="invalid-feedback">Ingresá un correo válido.</div>
+              </div>
+
+              <!-- Nombre completo -->
+              <div class="col-12">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre"
+                       required minlength="2" maxlength="60"
+                       placeholder="Como aparece en tu documento">
+                <div class="invalid-feedback">Entre 2 y 60 caracteres. Solo letras, espacios, apóstrofes o guiones.</div>
+              </div>
+
+              <!-- Fecha nacimiento -->
+              <div class="col-md-6">
+                <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="fechaNac" name="fechaNac" required>
+                <div class="invalid-feedback">Seleccioná una fecha válida (no futura).</div>
+              </div>
+
+              <!-- Género -->
+              <div class="col-md-6">
+                <label class="form-label">Género</label>
+                <div class="d-flex flex-wrap gap-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="genF" value="Femenino" required>
+                    <label class="form-check-label" for="genF">Femenino</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="genM" value="Masculino" required>
+                    <label class="form-check-label" for="genM">Masculino</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="genNB" value="No binario" required>
+                    <label class="form-check-label" for="genNB">No binario</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero" id="genND" value="Prefiero no decir" required>
+                    <label class="form-check-label" for="genND">Prefiero no decir</label>
+                  </div>
+                </div>
+                <div class="invalid-feedback d-block">Elegí una opción.</div>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="col-md-6">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono"
+                       inputmode="numeric" placeholder="8 dígitos (CR)" pattern="^\d{8}$" required>
+                <div class="invalid-feedback">Debe tener 8 dígitos numéricos.</div>
+              </div>
+
+              <!-- Tipo consulta -->
+              <div class="col-md-6">
+                <label for="tipoConsulta" class="form-label">Tipo de consulta</label>
+                <select id="tipoConsulta" name="tipoConsulta" class="form-select" required>
+                  <option value="">Seleccioná…</option>
+                  <option value="Sugerencia">Sugerencia</option>
+                  <option value="Producto">Consulta sobre producto</option>
+                  <option value="Pedido">Consulta sobre pedido / devolución</option>
+                  <option value="Otro">Otro</option>
+                </select>
+                <div class="invalid-feedback">Seleccioná el tipo de consulta.</div>
+              </div>
+
+              <!-- Número de pedido (condicional) -->
+              <div class="col-12 d-none" id="bloquePedido">
+                <label for="numeroPedido" class="form-label">Número de pedido</label>
+                <input type="text" class="form-control" id="numeroPedido" name="numeroPedido" placeholder="Ej: LHL-2025-00123" maxlength="20">
+                <div class="form-text">Se solicita sólo si tu consulta es por un pedido/devolución.</div>
+              </div>
+
+              <!-- Mensaje -->
+              <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" class="form-control" rows="4" minlength="10" required
+                          placeholder="Contanos más detalles…"></textarea>
+                <div class="invalid-feedback">Al menos 10 caracteres.</div>
+              </div>
+
+              <!-- Preferencia de contacto -->
+              <div class="col-12">
+                <label class="form-label">Preferís que te contactemos por</label>
+                <div class="d-flex flex-wrap gap-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="preferencia" id="prefMail" value="Email" required>
+                    <label class="form-check-label" for="prefMail">Email</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="preferencia" id="prefTel" value="Teléfono" required>
+                    <label class="form-check-label" for="prefTel">Teléfono</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="preferencia" id="prefWhats" value="WhatsApp" required>
+                    <label class="form-check-label" for="prefWhats">WhatsApp</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CAPTCHA (demo) -->
+              <div class="col-12">
+                <div class="g-recaptcha"
+                     data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                <div id="captchaError" class="text-danger small mt-1 d-none">Confirmá el CAPTCHA.</div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn w-100" type="submit" style="background:#101820;color:#dbb4c8;font-weight:600;">Enviar</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Resumen (oculto hasta enviar) -->
+          <div id="resumen-contacto" class="mt-4 d-none">
+            <div class="alert" style="background:#f3f0f4;border:2px solid #dbb4c8;color:#101820;">
+              <h5 class="mb-3" style="color:#50314c;">Resumen de tu consulta</h5>
+              <div id="resumen-contenido"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer-lehli container-fluid">
+  <div class="row justify-content-center align-items-center text-center text-md-start py-4 px-3">
+    <div class="col-12 col-md-4 mb-3 mb-md-0 footer-item">
+      <p class="mb-0">© 2025 LEHLI | Todos los derechos reservados</p>
+    </div>
+    <div class="col-12 col-md-4 d-flex justify-content-center footer-item redes">
       <a href="https://www.instagram.com/lehli_cr" target="_blank">
         <img src="img/LogoIg.png" alt="Instagram" class="icono-red">
         <span>@lehli_cr</span>
       </a>
-      <a href="https://www.tiktok.com/@lehli_cr" target="_blank">
+      <a href="https://www.tiktok.com/@lehli_cr?_t=ZM-8xZobgqzIdc&_r=1" target="_blank">
         <img src="img/LogoTik.png" alt="TikTok" class="icono-red">
         <span>@lehli_cr</span>
       </a>
@@ -107,21 +256,26 @@
         <span>WhatsApp</span>
       </a>
     </div>
-
-    <div class="footer-item">
+    <div class="col-12 col-md-4 mt-3 mt-md-0 footer-item">
       <a href="mailto:info@lehli.com" class="correo-footer">info@lehli.com</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    function enviarFormulario() {
-      const mensaje = document.getElementById('respuesta-envio');
-      mensaje.textContent = '¡Gracias por contactarnos! Te responderemos pronto. 💌';
-      mensaje.style.color = '#50314C';
-      mensaje.style.marginTop = '1rem';
-      return false; // Evita recargar la página
-    }
-  </script>
+<!-- JS: Bootstrap + Leaflet + reCAPTCHA + tu JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+
+<script src="./Js/productos.js"></script>
+<script src="./Js/carrito.js"></script>
+
+
+<script src="./Js/contacto.js"></script>
 </body>
 </html>
