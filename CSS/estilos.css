@@ -1812,3 +1812,33 @@ button:hover {
 #resumen-carrito .fs-5 {
   color: #101820;
 }
+
+
+/* PARA LA FACTURAAAAAAAAAAAAAAAAAAAA */
+/* --- Factura: forzar estilo claro y legible en pantalla --- */
+#factura-contenido,
+#factura-contenido .card-body {
+  background: #ffffff !important;
+  color: #101820 !important;
+}
+
+#factura-contenido .border {
+  border-color: #dbb4c8 !important;
+}
+
+#factura-contenido h2,
+#factura-contenido h6,
+#factura-contenido strong {
+  color: #50314c !important;
+}
+
+#factura-contenido .table,
+#factura-contenido .table th,
+#factura-contenido .table td {
+  color: #101820 !important;
+}
+
+#factura-contenido .table thead th {
+  background: #f3f0f4 !important;
+  color: #101820 !important;
+}
