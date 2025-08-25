@@ -1842,3 +1842,58 @@ button:hover {
   background: #f3f0f4 !important;
   color: #101820 !important;
 }
+
+
+/* PARA LA PAAGINA DE CONTACTO */
+
+/* ===== Contacto: forzar tema claro en cards y formularios ===== */
+body.contacto-page {
+  background-color: #DBD2DB; /* el fondo suave que ya usás */
+}
+
+/* Cards y list-group en claro */
+body.contacto-page .card {
+  background: #ffffff !important;
+  color: #101820 !important;
+  border: 2px solid #dbb4c8;
+  border-radius: 12px;
+}
+
+body.contacto-page .card .card-body { color: #101820; }
+
+body.contacto-page .list-group-item {
+  background: #ffffff !important;
+  color: #101820 !important;
+  border-color: #e9d8e4 !important;
+}
+
+body.contacto-page .text-muted { color: #6c757d !important; }
+
+/* Controles de formulario en claro */
+body.contacto-page .form-control,
+body.contacto-page .form-select {
+  background: #ffffff !important;
+  color: #101820 !important;
+  border-color: #c9b0bf;
+}
+
+/* Leaflet: evitar que se “suba” por encima del footer */
+body.contacto-page #mapa-lehli {
+  height: 320px;            /* por si algún estilo lo pisó */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;               /* 👈 clave */
+}
+
+/* Por si algún otro estilo global sube el mapa */
+body.contacto-page .leaflet-container { z-index: 0 !important; }
+
+/* Asegurá el footer por encima */
+.footer-lehli {
+  position: relative;
+  z-index: 5;
+}
+
+/* Un respiro abajo por si el mapa queda muy cerca del footer */
+body.contacto-page main.container { padding-bottom: 2.5rem; }

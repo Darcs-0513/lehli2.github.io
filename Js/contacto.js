@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }).addTo(map);
     L.marker(COORDS_LEHLI)
       .addTo(map)
-      .bindPopup("LEHLI — San José, CR")
+      .bindPopup("LEHLI BRAND — Aserri, CR")
       .openPopup();
   }
 
