@@ -124,7 +124,7 @@ const ratingQuemado = RATING_FIJO[producto.nombre] || "★★★★☆ (4/5)";
     <div class="mt-4">
       <a href="${backHref}" class="btn btn-outline-secondary btn-sm">← Regresar</a>
     </div>
-    
+
     <div class="row mt-5 align-items-center">
       <!-- Galería de imágenes -->
       <div class="col-md-6 mb-4">
@@ -202,7 +202,7 @@ const ratingQuemado = RATING_FIJO[producto.nombre] || "★★★★☆ (4/5)";
 
   document.getElementById("form-resena").addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("Gracias por tu reseña ❤️ (esto se podría guardar local si quisiéramos)");
+    alert("Gracias por tu reseña ❤️");
   });
 
 
