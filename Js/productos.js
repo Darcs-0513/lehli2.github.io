@@ -63,6 +63,7 @@ contenedores[categoria][0].appendChild(tarjeta);
 // PARA EL FILTRO 
 document.addEventListener("DOMContentLoaded", function () {
   const filtro = document.getElementById("filtro");
+   if (filtro) {
   filtro.addEventListener("change", function () {
     const seleccion = filtro.value;
 
@@ -76,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+    }
 });
 
 

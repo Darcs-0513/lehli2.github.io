@@ -97,10 +97,83 @@
     <strong>₡<span id="total-carrito">0</span></strong>
   </div>
 
-  <button class="btn btn-success ms-0 mt-2">Finalizar compra</button>
+  <button id="btn-pagar" class="btn btn-success ms-0 mt-2"
+        data-bs-toggle="modal" data-bs-target="#modalPago">
+  Finalizar compra
+</button>
+
+</div>
+  </main>
+
+
+<!-- Modal Pago -->
+<div class="modal fade" id="modalPago" tabindex="-1" aria-hidden="true" aria-labelledby="modalPagoLabel">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 id="modalPagoLabel" class="modal-title">Pago con tarjeta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <form id="form-pago" novalidate>
+        <div class="modal-body">
+          <!-- Resumen -->
+          <div class="mb-3 p-2 border rounded">
+            <div class="d-flex justify-content-between">
+              <small>Subtotal</small>
+              <small><strong>₡<span id="pago-subtotal">0</span></strong></small>
+            </div>
+            <div class="d-flex justify-content-between">
+              <small>Envío (<span id="pago-metodo">—</span>)</small>
+              <small><strong>₡<span id="pago-envio">0</span></strong></small>
+            </div>
+            <div class="d-flex justify-content-between fs-6 mt-1">
+              <span>Total</span>
+              <strong>₡<span id="pago-total">0</span></strong>
+            </div>
+          </div>
+
+          <!-- Campos de pago -->
+          <div class="mb-3">
+            <label for="titular" class="form-label">Titular de la tarjeta</label>
+            <input type="text" id="titular" class="form-control" required maxlength="60" autocomplete="cc-name" placeholder="Nombre completo">
+            <div class="invalid-feedback">Ingresa un nombre válido (solo letras, espacios, ' o -). 2–60 caracteres.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="numTarjeta" class="form-label">Número de tarjeta</label>
+            <input type="text" id="numTarjeta" class="form-control" inputmode="numeric" autocomplete="cc-number" placeholder="16 dígitos" maxlength="16" required>
+            <div class="invalid-feedback">Debes ingresar exactamente 16 dígitos numéricos.</div>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-6">
+              <label for="expiracion" class="form-label">Fecha de caducidad</label>
+              <input type="text" id="expiracion" class="form-control" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA o MM/AAAA" required>
+              <div class="invalid-feedback">Formato MM/AA o MM/AAAA, fecha futura válida.</div>
+            </div>
+            <div class="col-6">
+              <label for="cvv" class="form-label">CVV</label>
+              <input type="text" id="cvv" class="form-control" inputmode="numeric" autocomplete="cc-csc" placeholder="3 o 4 dígitos" maxlength="4" required>
+              <div class="invalid-feedback">3 dígitos (Visa/Mastercard) o 4 (AmEx).</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="btn-confirmar-pago" class="btn btn-dark w-100">Pagar ahora</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
 </div>
 
-  </main>
+
+
+
+
 
 
 <!-- FOOTEEEEER -->
