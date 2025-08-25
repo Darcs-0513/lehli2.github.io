@@ -735,24 +735,6 @@ header {
   }
 }
  
-/* ======= ACERCA DE (Bootstrap) ======= */
-body.acerca-page { background-color: #DBD2DB; }
-
-.acerca-card {
-  background: #ffffff;
-  color: #101820;
-  border-color: #dbb4c8;
-  border-radius: 12px;
-}
-
-.acerca-card .list-group-item {
-  background: #ffffff;
-  border-color: #ead4e2;
-}
-
-.acerca-foto { max-width: 220px; }
-
-
 
 /* ============================ */
 /* ======== CONTACTO ========= */
@@ -1924,3 +1906,38 @@ body.contacto-page #mapa-lehli{
   position:relative;
   z-index:0;
 }
+
+/* ===== ACERCA: forzar tema claro en esta página ===== */
+body.acerca-page { 
+  background-color: #DBD2DB; 
+}
+
+/* Card y lista en claro, aunque haya reglas globales oscuras */
+body.acerca-page .card,
+body.acerca-page .acerca-card,
+body.acerca-page .list-group-item {
+  background: #ffffff !important;
+  color: #101820 !important;
+  border-color: #dbb4c8 !important;
+}
+
+/* Borde más sutil para los ítems de la lista */
+body.acerca-page .list-group-item {
+  border-color: #ead4e2 !important;
+}
+
+/* Títulos y textos auxiliares */
+body.acerca-page .text-muted { color: #6c757d !important; }
+
+/* Botones con tu paleta */
+body.acerca-page .btn-outline-dark {
+  border-color: #dbb4c8 !important;
+  color: #101820 !important;
+}
+body.acerca-page .btn-outline-dark:hover {
+  background: #dbb4c8 !important;
+  color: #101820 !important;
+}
+
+/* Foto redonda tamaño cómodo */
+body.acerca-page .acerca-foto { max-width: 220px; }
