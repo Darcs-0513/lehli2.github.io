@@ -1,7 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  mostrarCarrito();
-});
-
 function mostrarCarrito() {
   const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const contenedor = document.getElementById("carrito-items");
@@ -25,7 +21,11 @@ function mostrarCarrito() {
   const ENVIO_POR_UNIDAD = false;
 
   carrito.forEach((producto, index) => {
-    const precioLimpio = parseFloat(producto.precio.replace(/[₡,.]/g, "").trim());
+    const sPrecio = String(producto.precio || "");
+const mCR = sPrecio.match(/₡\s*([\d\.,]+)/); // toma el primer monto en colones
+const precioLimpio = mCR
+  ? parseInt(mCR[1].replace(/[^\d]/g, ""), 10)
+  : parseInt(sPrecio.replace(/[^\d]/g, ""), 10) || 0;
     const subtotal = producto.cantidad * precioLimpio;
     total += subtotal;
 
@@ -203,6 +203,36 @@ function setupPago() {
   const titular = document.getElementById("titular");
   const numTarjeta = document.getElementById("numTarjeta");
   const expiracion = document.getElementById("expiracion");
+
+
+// Auto-formato MM/AA o MM/AAAA con "/"
+expiracion.addEventListener("input", () => {
+  // Deja solo dígitos
+  let v = expiracion.value.replace(/\D/g, "");
+  // Máximo 6 dígitos (MM + AAAA)
+  if (v.length > 6) v = v.slice(0, 6);
+
+  if (v.length <= 2) {
+    expiracion.value = v; // "M" o "MM"
+  } else {
+    // "MM/AA" o "MM/AAAA" según lo que haya
+    expiracion.value = v.slice(0, 2) + "/" + v.slice(2);
+  }
+});
+
+// Soporte para pegar valores con /, espacios, etc.
+expiracion.addEventListener("paste", (e) => {
+  e.preventDefault();
+  const text = (e.clipboardData || window.clipboardData).getData("text");
+  const v = text.replace(/\D/g, "").slice(0,6);
+  expiracion.value = v.length <= 2 ? v : v.slice(0,2) + "/" + v.slice(2);
+});
+
+
+
+
+
+
   const cvv = document.getElementById("cvv");
 
   // Al abrir modal, pintar resumen con los valores actuales de la página
