@@ -100,6 +100,27 @@ document.addEventListener("DOMContentLoaded", () => {
 function renderDetalle(producto) {
   const contenedor = document.getElementById("detalle-producto");
 
+const califs = (producto.resenas || []).map(r => Number(r.puntuacion) || 0);
+const prom   = califs.length ? (califs.reduce((a,b)=>a+b,0) / califs.length) : 0;
+const prom1  = Math.round(prom * 10) / 10; // 1 decimal
+const stars  = "★".repeat(Math.round(prom)) + "☆".repeat(5 - Math.round(prom));
+const lineaRating = califs.length
+  ? `Calificación promedio: ${prom1}/5 ${stars}`
+  : `Sin reseñas aún`;
+
+const RATING_FIJO = {
+  "Falda Retazos": "★★★★☆ (4/5)",
+  "Corset Strapple": "★★★★★ (5/5)",
+  "Jort Camouflaged": "★★★★☆ (4/5)",
+  "Chaqueta Colección": "★★★★★ (5/5)",
+  "Pantalón Colección": "★★★☆☆ (3/5)",
+  "Styling 1": "★★★★★ (5/5)",
+  "Styling 2": "★★★★★ (5/5)",
+  "Styling 3": "★★★★★ (5/5)"
+};
+const ratingQuemado = RATING_FIJO[producto.nombre] || "★★★★☆ (4/5)";
+
+
   contenedor.innerHTML = `
     <div class="row mt-5 align-items-center">
       <!-- Galería de imágenes -->
@@ -130,6 +151,7 @@ function renderDetalle(producto) {
         <p><strong>Entrega:</strong> ${producto.entrega}</p>
         <p><strong>Envío:</strong> ${producto.envio}</p>
         <p class="mt-3">${producto.descripcion}</p>
+        <p class="mb-2"><strong>Calificación:</strong> <span style="color:#f5c518;">${ratingQuemado}</span></p>
 
         <button class="btn btn-dark mt-4" data-id="${producto.id}">🛒 Agregar al carrito</button>
 

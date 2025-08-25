@@ -181,6 +181,23 @@ header {
 
 
 
+/* Animacion de cajitas */
+
+
+.valor-box:hover{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 18px 38px rgba(80,49,76,.28);
+  border-color:#50314c;
+  background:linear-gradient(135deg,#f5d9eb 0%, #ffe9f5 100%);
+  color: #50314c ;
+}
+.valor-box:hover::before{
+  transform:translateX(220%);
+  opacity:1;
+}
+
+
+
 /* ===================================*/
 /* ======= LINEA DECORATIVA ==== */
 /* =================================== */
