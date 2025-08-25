@@ -141,7 +141,7 @@
                 <img src="img/FtCorsetFrente.png" alt="Corset 1">
               </div>
               <h5 class="producto-titulo mt-3">Corset strapple<br>Denim recycling</h5>
-              <button class="btn-ver-mas mt-2">Ver más</button>
+                    <button class="btn-ver-mas mt-2 ir-detalle" data-id="Corset Strapple">Ver más</button>
             </div>
             
             <div class="col-md-4 col-12 text-center producto-carrusel">
@@ -149,7 +149,7 @@
                 <img src="img/DiseñoFald.png" alt="Corset 2">
               </div>
               <h5 class="producto-titulo mt-3">Falda Retazos<br>1/1</h5>
-              <button class="btn-ver-mas mt-2">Ver más</button>
+      <button class="btn-ver-mas mt-2 ir-detalle" data-id="Falda Retazos">Ver más</button>
             </div>
             
             <div class="col-md-4 col-12 text-center producto-carrusel">
@@ -157,7 +157,7 @@
                 <img src="img/DiseñoJort1.png" alt="Corset 3">
               </div>
               <h5 class="producto-titulo mt-3">Jort Camouflaged<br>1/1</h5>
-              <button class="btn-ver-mas mt-2">Ver más</button>
+      <button class="btn-ver-mas mt-2 ir-detalle" data-id="Jort Camouflaged">Ver más</button>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@
                 <img src="img/Modelo1.jpg" alt="Styling 1">
               </div>
               <h5 class="producto-titulo mt-3">Styling 1<br>Conjunto de prendas</h5>
-              <button class="btn-ver-mas mt-2">Ver más</button>
+      <button class="btn-ver-mas mt-2 ir-detalle" data-id="Styling 1">Ver más</button>
             </div>
 
             <div class="col-md-4 col-12 text-center producto-carrusel">
@@ -179,7 +179,7 @@
                 <img src="img/Modelo2 (1).jpg" alt="Styling 2">
               </div>
               <h5 class="producto-titulo mt-3">Styling 2<br>Conjunto de prendas</h5>
-              <button class="btn-ver-mas mt-2">Ver más</button>
+      <button class="btn-ver-mas mt-2 ir-detalle" data-id="Styling 2">Ver más</button>
             </div>
 
             <div class="col-md-4 col-12 text-center producto-carrusel">
@@ -187,7 +187,7 @@
                 <img src="img/Modelo3.jpg" alt="Styling 3">
               </div>
               <h5 class="producto-titulo mt-3">Styling 3<br>Conjunto de prendas</h5>
-              <button class="btn-ver-mas mt-2">Ver más</button>
+      <button class="btn-ver-mas mt-2 ir-detalle" data-id="Styling 3">Ver más</button>
             </div>
 
           </div>
@@ -229,9 +229,9 @@
           <div class="contenido-producto flex-grow-1 d-flex flex-column justify-content-between">
             <div>
               <h3><br>Colección Boxy Fit - Denim</h3>
-              <p>Chaqueta Colección | ONE OF ONE<br>₡60,000 CRC – $120.00 USD</p>
+              <p>Chaqueta Colección | ONE OF ONE<br>₡60,000 CRC</p>
             </div>
-            <button>Agregar al carrito</button>
+<button class="ir-detalle" data-id="Chaqueta Colección">Ver más</button>
           </div>
         </div>
       </div>
@@ -245,9 +245,9 @@
           <div class="contenido-producto flex-grow-1 d-flex flex-column justify-content-between">
             <div>
               <h3><br>Colección Boxy Fit - Denim</h3>
-              <p>Chaqueta Colección | ONE OF ONE<br>₡60,000 CRC – $120.00 USD</p>
+              <p>Chaqueta Colección | ONE OF ONE<br>₡60,000 CRC</p>
             </div>
-            <button>Agregar al carrito</button>
+<button class="ir-detalle" data-id="Chaqueta Colección">Ver más</button>
           </div>
         </div>
       </div>
@@ -261,10 +261,9 @@
           <div class="contenido-producto flex-grow-1 d-flex flex-column justify-content-between">
             <div>
               <h3><br>Colección Neo-Future</h3>
-              <p>Pantalón Colección | ONE OF ONE<br>₡60,000 CRC – $120.00 USD</p>
+              <p>Pantalón Colección | ONE OF ONE<br>₡60,000 CRC</p>
             </div>
-            <button>Agregar al carrito</button>
-          </div>
+<button class="ir-detalle" data-id="Pantalón Colección">Ver más</button>          </div>
         </div>
       </div>
 
@@ -277,7 +276,7 @@
           <div class="contenido-producto flex-grow-1 d-flex flex-column justify-content-between">
             <div>
               <h3><br>Colección Neo-Future</h3>
-              <p>Pantalón Colección | ONE OF ONE<br>₡60,000 CRC – $120.00 USD</p>
+              <p>Pantalón Colección | ONE OF ONE<br>₡60,000 CRC</p>
             </div>
             <button>Agregar al carrito</button>
           </div>
@@ -343,5 +342,22 @@
 
   <script src="./Js/productos.js"></script>
   <script src="./Js/carrito.js"></script>
+
+
+<script>
+  function irADetalle(nombre) {
+    if (!nombre) return;
+    window.location.href = "detalleProductos.html?id=" + encodeURIComponent(nombre);
+  }
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".ir-detalle");
+    if (!btn) return;
+    irADetalle(btn.dataset.id);
+  });
+</script>
+
+
+
 </body>
 </html>
