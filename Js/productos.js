@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="card-body d-flex flex-column justify-content-between">
                 <h5 class="card-title">${producto.nombre}</h5>
                 <p class="card-text">${producto.precio}</p>
-                <a href="detalleProductos.html?id=${encodeURIComponent(producto.nombre)}" class="btn btn-light mt-auto">Ver más</a>
+                <a href="detalleProductos.html?id=${encodeURIComponent(producto.nombre)}&src=productos" class="btn btn-light mt-auto">Ver más</a>
               </div>
             </div>
           `;
@@ -100,13 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
 function renderDetalle(producto) {
   const contenedor = document.getElementById("detalle-producto");
 
-const califs = (producto.resenas || []).map(r => Number(r.puntuacion) || 0);
-const prom   = califs.length ? (califs.reduce((a,b)=>a+b,0) / califs.length) : 0;
-const prom1  = Math.round(prom * 10) / 10; // 1 decimal
-const stars  = "★".repeat(Math.round(prom)) + "☆".repeat(5 - Math.round(prom));
-const lineaRating = califs.length
-  ? `Calificación promedio: ${prom1}/5 ${stars}`
-  : `Sin reseñas aún`;
+const qs  = new URLSearchParams(window.location.search);
+  const src = qs.get("src") || "";
+  let backHref = "index.html";
+  if (src === "productos") backHref = "productos.html";
+  else if (src === "index") backHref = "index.html";
+  else if (document.referrer && document.referrer.includes("productos.html")) backHref = "productos.html";
 
 const RATING_FIJO = {
   "Falda Retazos": "★★★★☆ (4/5)",
@@ -119,6 +118,14 @@ const RATING_FIJO = {
   "Styling 3": "★★★★★ (5/5)"
 };
 const ratingQuemado = RATING_FIJO[producto.nombre] || "★★★★☆ (4/5)";
+
+
+ contenedor.innerHTML = `
+    <div class="mt-4">
+      <a href="${backHref}" class="btn btn-outline-secondary btn-sm">← Regresar</a>
+    </div>
+
+
 
 
   contenedor.innerHTML = `
